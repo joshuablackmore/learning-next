@@ -1,10 +1,12 @@
 
 import Nav from './components/Nav'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Source_Code_Pro } from 'next/font/google'
  
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Source_Code_Pro({ 
+  weight: '400',
+  subsets: ['latin'] })
 
 export const metadata = {
   title: 'Create Next App',

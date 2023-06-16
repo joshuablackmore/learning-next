@@ -2,10 +2,13 @@
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
+import { useRouter } from 'next/navigation'
 
 
 
 const Nav = () => {
+
+    const router = useRouter();
 
     const [nav, setNav] = useState(false)
             const handleNav = () => {
@@ -23,20 +26,27 @@ const Nav = () => {
         }
 
     },[])
+
+    const navigationLinks = [
+        { path: '/', label: 'Home' },
+        { path: '/insta', label: 'Instagram' },
+        { path: '/listofposts', label: 'Posts' },
+        { path: '/about', label: 'About' },
+        { path: '/contact', label: 'Contact' },
+      ];
     
   return (
     <>
-    <div className=''>
-        <div className=' hidden sm:flex flex-row space-x-8 justify-center font-bold'>
+    <div>
+        <div className='hidden sm:flex flex-row space-x-8 justify-center font-bold'>
             <Link href='/'>Home</Link>
             <Link href='/insta'>Instagram</Link>
             <Link href='/listofposts'>Posts</Link>
             <Link href='/about'>About</Link>
             <Link href='/blog'>Blog</Link>
             <Link href='/contact'>Contact</Link>
-
         </div>
-        
+            
         <div className={nav ? 'fixed items-center justify-end top-0 w-full z-10 px-10 sm:hidden' : 'flex items-center justify-end absolute top-0 w-full z-10 px-10 sm:hidden'}>
             <div onClick={handleNav} className='flex z-10 m-2 justify-end sm:hidden bg-transparent'>
                 { !nav ? <AiOutlineMenu size={30}/> : <AiOutlineClose size={30} /> }
