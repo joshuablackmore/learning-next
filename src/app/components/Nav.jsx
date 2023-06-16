@@ -7,20 +7,21 @@ import { AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 
 const Nav = () => {
 
-    
-
-    useEffect(() => {
-        const handleOrientationChange = () => {
-           
-            const [nav, setNav] = useState(false)
+    const [nav, setNav] = useState(false)
             const handleNav = () => {
             setNav(!nav)
             };
 
+    useEffect(() => {
+        const closeNav = () => {
+            setNav(false)
         }
-        window.addEventListener('orientationchange', handleOrientationChange);
+        window.addEventListener('orientationchange', closeNav);
+    
+        return () => {
+            window.removeEventListener('orientationchange', closeNav);
+        }
 
-        window.removeEventListener('orientationchange', handleOrientationChange);
     },[])
     
   return (
