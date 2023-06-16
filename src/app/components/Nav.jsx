@@ -1,16 +1,27 @@
 "use client"
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 
 
 
 const Nav = () => {
 
-    const [nav, setNav] = useState(false)
-    const handleNav = () => {
-        setNav(!nav)
-    }
+    
+
+    useEffect(() => {
+        const handleOrientationChange = () => {
+           
+            const [nav, setNav] = useState(false)
+            const handleNav = () => {
+            setNav(!nav)
+            };
+
+        }
+        window.addEventListener('orientationchange', handleOrientationChange);
+
+        window.removeEventListener('orientationchange', handleOrientationChange);
+    },[])
     
   return (
     <>
