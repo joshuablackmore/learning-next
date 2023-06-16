@@ -38,14 +38,16 @@ const Nav = () => {
   return (
     <>
     <div>
-        <div className='hidden sm:flex flex-row space-x-8 justify-center font-bold'>
+        <div className='hidden sm:flex flex-row space-x-8 justify-center font-bold m-4'>
             <Link href='/'>Home</Link>
             <Link href='/insta'>Instagram</Link>
             <Link href='/listofposts'>Posts</Link>
             <Link href='/about'>About</Link>
             <Link href='/blog'>Blog</Link>
             <Link href='/contact'>Contact</Link>
+            
         </div>
+
             
         <div className={nav ? 'fixed items-center justify-end top-0 w-full z-10 px-10 sm:hidden' : 'flex items-center justify-end absolute top-0 w-full z-10 px-10 sm:hidden'}>
             <div onClick={handleNav} className='flex z-10 m-2 justify-end sm:hidden bg-transparent'>

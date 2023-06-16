@@ -1,15 +1,20 @@
-import Nav from "./components/Nav";
-
-
+import Gallery from "./insta/page";
 
 
 export default function Home() {
 
  
   return (
-  
-    
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="">
+      <div className="flex h-screen border border-b-black">
+
+
+      </div>
+      
+        <div>
+          <Gallery />
+        </div>
+      
   
     </main>
   )
