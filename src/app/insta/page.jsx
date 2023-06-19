@@ -22,7 +22,7 @@ const Gallery = async () => {
       {lessPics.map((pic) => {
       return (
       <div key={pic.id} className="flex justify-center">
-        <Image loading="lazy" src={pic.media_url} width='450' height='300' className="rounded-lg" />
+        <Image loading="lazy" src={pic.media_url} width='450' height='300' className="rounded-lg" alt="insta feed"/>
         
       </div>
       )
