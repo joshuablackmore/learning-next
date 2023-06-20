@@ -82,6 +82,7 @@ const Nav2 = () => {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
+                style={{ opacity: 0 }} // Add this line
               >
                 <Link href={link.path}>{link.label}</Link>
               </motion.div>
