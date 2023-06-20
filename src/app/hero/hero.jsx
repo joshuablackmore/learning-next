@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className='flex h-screen sm:h-[calc(100vh_-_30px)] justify-center items-center'>
+    <div className='flex h-screen sm:h-[calc(100dvh_-_30px)] justify-center items-center'>
         <motion.div
         initial={{ x: -1000, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
