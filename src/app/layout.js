@@ -1,5 +1,5 @@
 
-import Nav3 from './components/Nav3'
+import Nav2 from './components/Nav2'
 import './globals.css'
 import { Source_Code_Pro } from 'next/font/google'
  
@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav3 />
+        <Nav2 />
         {children}</body>
     </html>
   )
