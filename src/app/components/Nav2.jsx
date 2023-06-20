@@ -44,18 +44,21 @@ const Nav2 = () => {
         
              <AnimatePresence>
                 {!nav &&
-            <div className='hidden sm:flex flex-row space-x-8 justify-center font-bold m-4'>
-            {navigationLinks.map((link, index) => (
-              
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: -30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Link href={link.path}>{link.label}</Link>
-              </motion.div>
-            ))}
+            <div className='hidden sm:flex flex-row space-x-8 justify-center lg:justify-end lg:pr-20 xl:pr-40 sm:items-center lg:items-center font-bold h-10'>
+            
+                {navigationLinks.map((link, index) => (
+                
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: -30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    
+                >
+                    <Link href={link.path}>{link.label}</Link>
+                </motion.div>
+                ))}
+
             </div>
 }
             </AnimatePresence>
