@@ -5,12 +5,12 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
   return (
-    <div className='flex h-screen sm:h-[calc(100vh_-_30px)] justify-center items-center'>
+    <div className='flex h-screen justify-center items-center border border-b-black'>
         <motion.div
         initial={{ x: -1000, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
-        className='hero-img flex h-[60%] w-[100%] bg-cover bg-no-repeat sm:h-[80%] lg:h-[100%]'
+        className='hero-img flex h-[60%] w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1480px] max-h-[900px] '
         >
             
         </motion.div>

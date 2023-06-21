@@ -1,6 +1,7 @@
+import InstaHome from "./components/InstaHome/InstaHome";
 import Footer from "./footer/page";
 import Hero from "./hero/hero";
-import Gallery from "./insta/page";
+
 
 
 
@@ -14,7 +15,7 @@ export default function Home() {
       </div>
       
         <div>
-          <Gallery />
+          <InstaHome />
         </div>
         <footer>
           <Footer />

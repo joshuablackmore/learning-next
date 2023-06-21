@@ -39,12 +39,12 @@ const Nav2 = () => {
     
   return (
 
-    <div>
+    <div className='box-border '>
         <div>
         
              <AnimatePresence>
                 {!nav &&
-            <div className='hidden sm:flex flex-row space-x-8 justify-center lg:justify-end lg:pr-20 xl:pr-40 sm:items-center lg:items-center font-bold h-10'>
+            <div className='hidden xl:flex absolute flex-row space-x-8 xl:right-0 xl:pr-20 font-bold h-10 xl:text-3xl border border-red-400'>
             
                 {navigationLinks.map((link, index) => (
                 
@@ -67,16 +67,23 @@ const Nav2 = () => {
 
 
             
-        <div className={nav ? 'fixed items-center justify-end top-0 w-full z-10 px-10 sm:hidden' : 'flex items-center justify-end absolute top-0 w-full z-10 px-10 sm:hidden'}>
-            <div onClick={handleNav} className='flex z-10 m-2 justify-end sm:hidden bg-transparent'>
-                { !nav ? <AiOutlineMenu size={30}/> : <AiOutlineClose size={30} /> }
-            </div>
+        <div className={nav ? 'flex items-center justify-between top-0 w-full z-50 border border-b-black xl:hidden' : 'flex items-center justify-between top-50 w-full z-800 xl:hidden border border-b-black'}>
+        
+                <div className='flex m-2 justify-end xl:hidden sm:text-lg md:text-xl lg:text-2xl'>
+                    <h1>Peter Blackmore</h1>
+                </div>
+
+                <div onClick={handleNav} className='flex z-10 m-2 justify-end xl:hidden bg-transparent'>
+                    { !nav ? <AiOutlineMenu size={30}/> : <AiOutlineClose size={30} /> }
+                </div>
+                
+                
         </div>
         
-        <div className={!nav ? 'fixed h-screen w-[60%] left-[-100%] ease-out duration-700' : 'fixed h-screen w-[60%] bg-slate-200 border border-r-pink-300 left-0 right-0 transition-all ease-out duration-200'} > 
+        <div className={!nav ? 'fixed h-screen w-[50%] left-[-100%] ease-out duration-700' : 'fixed h-screen w-[50%] sm:w-[40%] lg:w-[30%] bg-slate-200 border border-r-slate-300 left-0 right-0 transition-all ease-out duration-200 z-10'} > 
             <AnimatePresence>
                 {nav &&
-            <div onClick={handleNav} className=' flex text-black pt-30 flex-col space-y-8 uppercase font-bold m-8'>
+            <div onClick={handleNav} className=' flex text-black sm:text-lg md:text-xl lg:text-2xl pt-30 flex-col space-y-8 uppercase font-bold m-8'>
             {navigationLinks.map((link, index) => (
               
               <motion.div
