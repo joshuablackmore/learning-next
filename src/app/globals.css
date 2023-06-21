@@ -30,6 +30,10 @@ html {
   height: -webkit-fill-available;
 }
 
+main {
+  height: -webkit-fill-available;
+}
+
 .hero-img {
   background-image: url('../../public/pete-cropped.jpg');
 }
