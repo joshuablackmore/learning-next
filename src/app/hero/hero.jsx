@@ -5,18 +5,20 @@ import { motion } from 'framer-motion'
 
 const Hero = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
+    const [imageSrc, setImageSrc] = useState('')
 
-    const handleImageLoad = () => {
-        setImageLoaded(true);
-    };
 
     useEffect(() => {
         const image = new Image();
         image.src = 'pete-cropped.jpg';
         image.onload = () => {
+            setImageSrc(image.src)
             setImageLoaded(true)
         };
-    }, [])
+        console.log(image)
+    }, []);
+
+    
     
   return (
     <>
@@ -26,8 +28,15 @@ const Hero = () => {
             initial={{ x: -1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className='hero-img flex h-3/4 w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1480px] max-h-[900px] '
-            />  
+            className=' left-11 border border-dark3 hero-img flex h-3/4  w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1480px] max-h-[900px] '
+            >
+                <img
+            src={imageSrc}
+            alt='Hero Image'
+            style={{ display: 'none' }}
+            
+          />
+                </motion.div>
             )}
         
             <motion.div
