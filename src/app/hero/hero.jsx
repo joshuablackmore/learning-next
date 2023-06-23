@@ -1,19 +1,35 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 
 const Hero = () => {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    };
+
+    useEffect(() => {
+        const image = new Image();
+        image.src = 'pete-cropped.jpg';
+        image.onload = () => {
+            setImageLoaded(true)
+        };
+    }, [])
+    
   return (
     <>
     <div className=' bg-light1 box-border flex flex-col h-screen sm:items-center'>
+            {imageLoaded && (
             <motion.div
             initial={{ x: -1000, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            animate={ imageLoaded ? { x: 0, opacity: 1 } : {}}
             transition={{ duration: 0.8 }}
             className='hero-img flex h-3/4 w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1480px] max-h-[900px] '
-            >  
-            </motion.div>
+            />  
+            )}
+        
             <motion.div
             initial={{ opacity: 0}}
             animate={{ opacity: 1}}
