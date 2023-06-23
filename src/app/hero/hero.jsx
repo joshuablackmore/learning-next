@@ -24,7 +24,7 @@ const Hero = () => {
             {imageLoaded && (
             <motion.div
             initial={{ x: -1000, opacity: 0 }}
-            animate={ imageLoaded ? { x: 0, opacity: 1 } : {}}
+            animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
             className='hero-img flex h-3/4 w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1480px] max-h-[900px] '
             />  
