@@ -37,3 +37,15 @@ main {
 .hero-img {
   background-image: url('../../public/pete-cropped.jpg');
 }
+
+.dim-bg {
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999; /* Make sure the dimming layer is above other content */
+}
+
+

@@ -1,5 +1,7 @@
 
 import Nav2 from './components/Nav2'
+import Footer from './footer/page'
+
 import './globals.css'
 import { Source_Code_Pro } from 'next/font/google'
  
@@ -18,7 +20,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <Nav2 />
-        {children}</body>
+        {children}
+        <Footer />
+        </body>
+      
     </html>
   )
 }
