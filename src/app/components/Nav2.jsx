@@ -43,10 +43,10 @@ const Nav2 = () => {
         <div>
              
                 {!nav &&
-            <div className='hidden xl:flex flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold xl:text-xl items-center border border-b-slate-100'>
+            <div className='hidden bg-light2 xl:flex flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold xl:text-xl items-center'>
             
                 <div className='flex ml-2 sm:text-lg md:text-xl lg:text-2xl'>
-                    <h1><span className=' font-extrabold'>Peter</span><span className=' text-slate-500'>Blackmore</span></h1>
+                    <h1><span className=' text-dark3 font-bold'>Peter</span><span className=' font-light text-dark1'>Blackmore</span></h1>
                 </div>
                     <div className='flex flex-row space-x-6'>
                 {navigationLinks.map((link, index) => (
@@ -74,10 +74,10 @@ const Nav2 = () => {
 
 
             
-        <div className={nav ? 'flex items-center justify-between top-0 w-full z-50 border border-b-black xl:hidden' : 'flex items-center justify-between top-50 w-full z-800 xl:hidden border border-b-black'}>
+        <div className={nav ? 'flex bg-light1 items-center justify-between top-0 w-full z-50 xl:hidden' : 'flex bg-light1 items-center justify-between top-50 w-full z-800 xl:hidden '}>
         
                 <div className='flex ml-2 sm:text-lg md:text-xl lg:text-2xl'>
-                    <h1><span className=' font-extrabold'>Peter</span><span className=' text-slate-500'>Blackmore</span></h1>
+                    <h1><span className='text-dark3 font-extrabold'>Peter</span><span className=' text-dark1'>Blackmore</span></h1>
                 </div>
 
                 <div onClick={handleNav} className='flex z-10 m-2 justify-end xl:hidden bg-transparent'>
@@ -87,10 +87,10 @@ const Nav2 = () => {
                 
         </div>
         
-        <div className={!nav ? 'fixed h-screen left-[-100%] w-[50%] ease-out duration-700' : 'fixed h-screen w-[50%] sm:w-[40%] lg:w-[30%] bg-slate-200 border border-r-slate-500 left-0 right-0 transition-all ease-out duration-200 z-10'} > 
+        <div className={!nav ? 'fixed h-screen left-[-100%] w-[50%] ease-out duration-700' : 'fixed h-screen w-[50%] sm:w-[40%] lg:w-[30%] bg-dark1 text-light1 border-r left-0 right-0 transition-all ease-out duration-200 z-10'} > 
             <AnimatePresence>
                 {nav &&
-            <div onClick={handleNav} className=' flex text-black sm:text-lg md:text-xl lg:text-2xl pt-30 flex-col space-y-8 uppercase font-bold m-8'>
+            <div onClick={handleNav} className=' flex sm:text-lg md:text-xl lg:text-2xl pt-30 flex-col space-y-8 uppercase font-bold m-8'>
             {navigationLinks.map((link, index) => (
               
               <motion.div
