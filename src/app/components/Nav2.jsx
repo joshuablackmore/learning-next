@@ -39,7 +39,7 @@ const Nav2 = () => {
     
   return (
 
-    <div className='box-border '>
+    <div className='box-border'>
         <div>
              
                 {!nav &&
@@ -74,7 +74,7 @@ const Nav2 = () => {
 
 
             
-        <div className={nav ? 'flex fixed bg-light1 items-center justify-between top-0 w-full z-50 xl:hidden' : 'flex fixed bg-light1 items-center justify-between top-50 w-full z-800 xl:hidden '}>
+        <div className={nav ? 'flex bg-light1 items-center justify-between top-0 w-full z-50 xl:hidden' : 'flex bg-light1 items-center justify-between top-50 w-full z-800 xl:hidden '}>
         
                 <div className='flex ml-2 text-lg md:text-xl lg:text-2xl'>
                     <h1><span className='text-dark3 font-extrabold'>Peter</span><span className=' text-dark1'>Blackmore</span></h1>
