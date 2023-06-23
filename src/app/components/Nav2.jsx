@@ -87,7 +87,7 @@ const Nav2 = () => {
                 
         </div>
         
-        <div className={!nav ? 'fixed h-screen left-[-100%] w-[50%] ease-out duration-700' : 'fixed h-screen w-[50%] sm:w-[40%] lg:w-[30%] bg-gradient-to-b from-dark1 to-dark3 text-light1 border-r left-0 right-0 transition-all ease-out duration-200 z-10'} > 
+        <div className={!nav ? 'fixed h-screen left-[-100%] w-[50%] duration-1000 transition-all z-[999]' : 'fixed h-screen w-[50%] sm:w-[40%] lg:w-[30%] bg-gradient-to-b from-dark1 to-dark3 text-light1 border-r left-0 right-0 transition-all easein duration-1000 z-0'} > 
             <AnimatePresence>
                 {nav &&
             <div onClick={handleNav} className=' flex sm:text-lg md:text-xl lg:text-2xl pt-10 flex-col space-y-8 uppercase font-bold m-8'>
@@ -98,7 +98,7 @@ const Nav2 = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                style={{ opacity: 0 }} // Add this line
+                style={{ opacity: 0 }}
               >
                 <Link href={link.path}>{link.label}</Link>
               </motion.div>
