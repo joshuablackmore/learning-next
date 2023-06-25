@@ -18,7 +18,7 @@ const Gallery = async () => {
   
   return (
     
-    <div className='flex flex-col pt-20 gap-2 sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 '>
+    <div className=' bg-light2 flex flex-col pt-20 gap-2 sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 '>
       {lessPics.map((pic) => {
       return (
       <div key={pic.id} className="flex justify-center">
