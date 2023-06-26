@@ -21,14 +21,14 @@ const Hero = () => {
     
     
   return (
-    <>
+    
     <div className=' bg-light1 box-border flex flex-col h-[100vh] sm:items-center'>
             {imageLoaded && (
             <motion.div
             initial={{ x: -1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className=' left-11 border border-dark3 hero-img flex h-[60%]  w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1480px] max-h-[900px] '
+            className='border border-dark3 hero-img flex min-h-[360px] h-[60%]  w-[100%] bg-cover bg-no-repeat md:h-[80%] max-w-[1280px] xl:w-full   '
             >
                 </motion.div>
             )}
@@ -51,7 +51,7 @@ const Hero = () => {
 
         
         
-       </>
+       
         
     
   )
