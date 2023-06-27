@@ -21,7 +21,7 @@ const Hero = () => {
     
     
   return (
-    <div className='flex items-center flex-col h-screen bg-light1 box-border landscape:flex-row z-50 '>
+    <div className='flex items-center flex-col h-screen bg-light1 box-border landscape:flex-row z-50 overflow-hidden '>
 
         <div className='min-h-[395px] h-[50%] w-[100%] md:h-[60%] lg:h-[90%] xl:h-[100%] max-w-[1180px] flex items-center  '>
             {imageLoaded && (
