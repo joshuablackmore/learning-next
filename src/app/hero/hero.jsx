@@ -44,7 +44,7 @@ const Hero = () => {
                 initial={{ opacity: 0}}
                 animate={{ opacity: 1}}
                 transition={{ delay: 0.8, duration: 1.5 }}
-                className=' h-full w-full overflow-y-scroll flex items-start mt-2 md:mx-2 xl:mx-20 '>
+                className=' h-full w-full flex items-start mt-2 md:mx-2 xl:mx-20 '>
                 <div className=' m-2 mt-6'>
                     <h1 className='  text-2xl'>I paint and draw things</h1>
                     <p className=' pt-6 py-2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In iure quae minus! Corporis est enim nulla? Totam, labore ipsam! Corporis est ullam facere veritatis sit perspiciatis nulla ea earum hic?</p>
