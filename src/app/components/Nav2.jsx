@@ -39,7 +39,7 @@ const Nav2 = () => {
       <div className="box-border">
         <div>
           {!nav && (
-            <div className=" hidden xl:flex flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center">
+            <div className=" hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center">
               <div className="flex ml-2 md:text-xl lg:text-2xl">
                 <h1>
                   <span className=" text-dark3 font-bold">Peter</span>
