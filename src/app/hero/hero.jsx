@@ -21,9 +21,10 @@ const Hero = () => {
     
     
   return (
-    <div className='flex items-center flex-col h-screen bg-light1 box-border landscape:flex-row z-50  '>
+<>
+    <div className='flex items-center h-screen flex-col bg-light1 box-border z-50  '>
 
-        <div className='min-h-[395px] h-[50%] w-[100%] md:h-[60%] lg:h-[90%] xl:h-[100%] max-w-[1180px] flex items-center  '>
+        <div className=' flex-1 min-h-[395px] h-[50%] w-[100%] md:h-[60%] lg:h-[90%] xl:h-[100%] flex items-center  '>
             {imageLoaded && (
             <motion.div
             initial={{ x: -1000, opacity: 0 }}
@@ -31,14 +32,14 @@ const Hero = () => {
             transition={{ duration: 0.8 }}
             className='flex justify-center h-full w-full bg-cover'
             >
-                <img src={imageSrc} className='flex object-cover h-full landscape:h-[85%] '></img>
+                <img src={imageSrc} className='flex object-cover h-full '></img>
                 </motion.div>
             )}
-            </div>
-            
+        </div>
+           
         
-
-            <div className='h-[50%] w-[100%] flex items-center landscape:h-[85%] landscape:self-start overflow-y-scroll landscape:overflow-y-scroll '>
+        <div className='flex-1 flex items-center h-screen flex-col bg-light1 box-border' >
+            <div className='h-[50%] w-[100%] flex items-center '>
                 {imageLoaded && (
                 <motion.div
                 initial={{ opacity: 0}}
@@ -55,14 +56,14 @@ const Hero = () => {
                 </motion.div>
             )}
             </div>
-                
-            
-    </div> 
+        </div>        
+    </div>       
+    
 
         
         
        
-        
+</>       
     
   )
 }
