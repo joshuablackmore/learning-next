@@ -17,7 +17,7 @@ const Gallery = async () => {
   const lessPics = insta.data.slice(0, 8);
   
   return (
-    
+
     <div className=' bg-light2 flex flex-col pt-20 gap-2 sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 '>
       {lessPics.map((pic) => {
       return (
@@ -29,8 +29,9 @@ const Gallery = async () => {
       
       
     })}
+     
     </div>
-  
+
   )
 }
 

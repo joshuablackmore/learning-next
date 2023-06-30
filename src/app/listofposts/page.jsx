@@ -26,8 +26,8 @@ export default async function ListOfPosts() {
 
   return (
     <>
-    <div className="flex h-screen flex-col ">
-        <div className="border border-pink-600 pl-5 pt-20 text-sm">
+    <div className="flex flex-col ">
+        <div className=" pl-5 pt-20 text-sm">
         {posts.map((post) => {
           return <p key={post.id}>{post.title}</p>
         })}
