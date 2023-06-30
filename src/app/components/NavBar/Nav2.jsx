@@ -29,7 +29,6 @@ const Nav2 = () => {
     const navigationLinks = [
       { path: '/', label: 'Home' },
       { path: '/insta', label: 'Instagram' },
-      { path: '/listofposts', label: 'Posts' },
       { path: '/about', label: 'About' },
       { path: '/blog', label: 'Blog' },
       { path: '/contact', label: 'Contact' },
