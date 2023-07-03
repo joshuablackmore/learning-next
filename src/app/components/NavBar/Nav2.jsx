@@ -64,7 +64,7 @@ const Nav2 = () => {
         </div>
 
         {/* small screen nav */}
-        <div className={nav ? 'flex bg-light1 items-center justify-between top-0 w-full z-[700] xl:hidden' : 'flex bg-light1 items-center justify-between top-50 w-full z-[700] xl:hidden '}>
+        <div className={nav ? 'flex fixed bg-light1 items-center justify-between top-0 w-full z-[700] xl:hidden' : 'flex fixed bg-light1 items-center justify-between top-50 w-full z-[700] xl:hidden '}>
           <div className="flex ml-2 text-lg md:text-xl lg:text-2xl">
             <h1>
               <span className="text-dark3 font-extrabold">Peter</span>
