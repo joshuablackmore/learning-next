@@ -22,7 +22,7 @@ const Hero = () => {
     
   return (
 <>
-    <div className='flex flex-col xl:flex-row h-screen m-auto overflow-y-scroll '>
+    <div className='flex flex-col xl:flex-row h-screen m-auto overflow-auto'>
        
 
             
