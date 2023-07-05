@@ -40,7 +40,7 @@ const Nav2 = () => {
         {/* large sreen nav */}
         <div>
           {!nav && (
-            <div className="z-[600] hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center">
+            <div className="hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center">
               <div className="flex ml-2 md:text-xl lg:text-2xl">
                 <h1>
                   <span className="text-dark3 font-bold">Peter</span>
@@ -64,7 +64,8 @@ const Nav2 = () => {
         </div>
 
         {/* small screen nav */}
-        <div className={nav ? 'flex fixed bg-light1 items-center justify-between top-0 w-full z-[700] xl:hidden' : 'flex fixed bg-light1 items-center justify-between top-50 w-full z-[700] xl:hidden '}>
+        <div className='fixed w-[100%] bg-light1  z-[700] xl:hidden'>
+         <div className='  flex items-center justify-between w-full '>
           <div className="flex ml-2 text-lg md:text-xl lg:text-2xl">
             <h1>
               <span className="text-dark3 font-extrabold">Peter</span>
@@ -76,7 +77,7 @@ const Nav2 = () => {
             {!nav ? <AiOutlineMenu size={30} /> : <AiOutlineClose size={30} />}
           </div>
         </div>
-
+        </div>
         {/* slider */}
         <AnimatePresence>
           {nav && (

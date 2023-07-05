@@ -22,7 +22,7 @@ const Hero = () => {
     
   return (
 <>
-    <div className='flex flex-col xl:flex-row h-screen m-auto overflow-auto'>
+    <div className='flex flex-col xl:flex-row h-screen m-auto pt-[46px] '>
        
 
             
@@ -38,7 +38,7 @@ const Hero = () => {
                 )}
             
            
-                    <div className='h-[50%] w-[100%] flex items-center  '>
+                    <div className='h-[50%] w-[100%] flex items-center   '>
                         {imageLoaded && (
                         <motion.div
                         initial={{ opacity: 0}}
@@ -48,7 +48,7 @@ const Hero = () => {
                         <div className=' my-6'>
                             <h1 className=' m-2 text-2xl'>I paint and draw things</h1>
                             <p className=' pt-6 py-2'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. In iure quae minus! Corporis est enim nulla? Totam, labore ipsam! Corporis est ullam facere veritatis sit perspiciatis nulla ea earum hic?</p>
-                            <p className=' pt-6 py-2'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cupiditate quos voluptas hic, beatae saepe voluptate rerum voluptates eveniet asperiores eos enim perspiciatis in animi velit esse, exercitationem ut eius.</p>
+                            
                         </div>
                         
                         
