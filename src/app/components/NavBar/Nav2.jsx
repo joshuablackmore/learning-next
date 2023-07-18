@@ -15,10 +15,12 @@ const Nav2 = () => {
     setNav(!nav);
   };
 
+  const closeNav = () => {
+    setNav(false);
+  }
+
   useEffect(() => {
-    const closeNav = () => {
-      setNav(false);
-    };
+      
     window.addEventListener('orientationchange', closeNav);
 
     return () => {
@@ -27,7 +29,6 @@ const Nav2 = () => {
   }, [nav]);
 
   const navigationLinks = [
-    { path: '/', label: 'Home' },
     { path: '/insta', label: 'Instagram' },
     { path: '/about', label: 'About' },
     { path: '/blog', label: 'Blog' },
@@ -42,10 +43,12 @@ const Nav2 = () => {
           {!nav && (
             <div className="hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center">
               <div className="flex ml-2 md:text-xl lg:text-2xl">
-                <h1>
-                  <span className="text-dark3 font-bold">Peter</span>
-                  <span className="font-light text-dark1">Blackmore</span>
+              <Link href='./' onClick={closeNav}>
+                 <h1>
+              <span className="text-dark3 font-extrabold">Peter</span>
+              <span className="text-dark1">Blackmore</span>
                 </h1>
+            </Link>
               </div>
               <div className="flex flex-row space-x-6">
                 {navigationLinks.map((link, index) => (
@@ -67,10 +70,12 @@ const Nav2 = () => {
         <div className='fixed w-[100%] bg-light1  z-[700] xl:hidden'>
          <div className='  flex items-center justify-between w-full '>
           <div className="flex ml-2 text-lg md:text-xl lg:text-2xl">
+          <Link href='./' onClick={closeNav}>
             <h1>
               <span className="text-dark3 font-extrabold">Peter</span>
               <span className="text-dark1">Blackmore</span>
             </h1>
+            </Link>
           </div>
 
           <div onClick={handleNav} className="flex z-10 m-2 justify-end xl:hidden bg-transparent">
@@ -86,7 +91,7 @@ const Nav2 = () => {
               initial={{ opacity: 0, translateX: '-100%' }}
               animate={{ opacity: 1, translateX: 0 }}
               exit={{ opacity: 1, translateX: '-100%' }}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.3 }}
             >
               <div
                 onClick={handleNav}
@@ -97,7 +102,7 @@ const Nav2 = () => {
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
                     style={{ opacity: 0 }}
                   >
                     <Link href={link.path}>{link.label}</Link>

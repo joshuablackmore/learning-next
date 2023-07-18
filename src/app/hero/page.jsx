@@ -3,29 +3,30 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 
 
+
 const Hero = () => {
     const [imageLoaded, setImageLoaded] = useState(false);
     const [imageSrc, setImageSrc] = useState('')
+    const profPic = 'https://cdn.sanity.io/images/7gqekvwy/production/f2c223bda4880132ba053f98d50c5f98e8f06e95-1331x687.jpg?w=2000&fit=max&auto=format&dpr=2'
 
 
     useEffect(() => {
         const image = new Image();
-        image.src = 'pete-cropped.jpg';
+        image.src = profPic;
         image.onload = () => {
             setImageSrc(image.src)
             setImageLoaded(true)
         };
-        console.log(image)
+        // console.log(image)
     }, []);
 
     
     
   return (
 <>
-    <div className='flex flex-col xl:flex-row h-screen m-auto pt-[46px] '>
+    <div className='flex flex-col xl:flex-row h-screen m-auto pt-[46px] xl:pt-0 '>
        
-
-            
+         
                 {imageLoaded && (
                 <motion.div
                 initial={{ x: -1000, opacity: 0 }}
