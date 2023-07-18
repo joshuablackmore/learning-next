@@ -4,7 +4,6 @@ import ClientPortfolio from "./client-portfolio";
 
 export default async function Portfolio() {
     const data = await getArtwork();
-    console.log(data)
 
   return ( 
     <>
