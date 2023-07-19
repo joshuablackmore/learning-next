@@ -86,7 +86,7 @@ const Nav2 = () => {
         <AnimatePresence>
           {nav && (
             <motion.div
-              className="z-[500] absolute w-[100%] h-[35%] bg-gradient-to-b from-dark1 to-dark3 text-light1 border-b left-0 right-0"
+              className="z-[500] h-[50%] absolute w-[100%] bg-gradient-to-b from-dark1 to-dark3 text-light1 border-b left-0 right-0"
               initial={{ opacity: 0, translateY: '-100%' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 1, translateY: '-100%' }}
@@ -94,7 +94,7 @@ const Nav2 = () => {
             >
               <div
                 onClick={handleNav}
-                className="flex sm:text-lg md:text-xl lg:text-2xl pt-20 flex-col space-y-8 uppercase font-bold m-8"
+                className="flex sm:text-lg md:text-xl lg:text-2xl flex-col space-y-8 uppercase font-bold pt-[90px] items-center"
               >
                 {navigationLinks.map((link, index) => (
                   <motion.div
