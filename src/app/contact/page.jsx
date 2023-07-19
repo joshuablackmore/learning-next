@@ -5,6 +5,8 @@ export default function Contact() {
 
 
 
-  return <div className='pt-[45px]'>contact</div>
+  return <div className='h-screen pt-[90px]'>
+    <h1>page under construction</h1>
+  </div>
 }
 
