@@ -27,7 +27,7 @@ export default function ClientPortfolio({ image, name, id, alt }) {
       
       {/* Render the fullscreen image component if an image is clicked */}
       {fullscreenImage && (
-        <FullScreenImage imageUrl={fullscreenImage} onClose={handleCloseFullscreen} />
+        <FullScreenImage imageUrl={fullscreenImage} onClose={handleCloseFullscreen} loading='lazy' />
       )}
     </div>
     

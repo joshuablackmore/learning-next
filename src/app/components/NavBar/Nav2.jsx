@@ -67,7 +67,7 @@ const Nav2 = () => {
         </div>
 
         {/* small screen nav */}
-        <div className='fixed w-[100%] bg-light1  z-[700] xl:hidden'>
+        <div className='fixed border-b w-[100%] bg-light1  z-[700] xl:hidden'>
          <div className='  flex items-center justify-between w-full '>
           <div className="flex ml-2 text-lg md:text-xl lg:text-2xl">
           <Link href='./' onClick={closeNav}>
