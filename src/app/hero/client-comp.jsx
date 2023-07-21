@@ -22,7 +22,7 @@ const HeroClient = ({ heading, intro }) => {
 
   return (
 <>
-    <div className=' bg-light1 flex flex-col xl:flex-row h-screen m-auto pt-[46px] xl:pt-0 border-b'>
+    <div className=' overflow-auto bg-light1 flex flex-col xl:flex-row h-screen m-auto pt-[46px] xl:pt-0 border-b'>
        
          
         {imageLoaded && (
@@ -37,7 +37,7 @@ const HeroClient = ({ heading, intro }) => {
         )}
             
            
-            <div className='h-[50%] w-[100%] flex flex-col items-center '>
+            <div className=' w-[100%] flex flex-col items-center '>
                 {imageLoaded && (
                 <motion.div
                 initial={{ opacity: 0}}
@@ -50,7 +50,7 @@ const HeroClient = ({ heading, intro }) => {
                             <PortableText value={intro[0]} />
                                 <Link 
                                     href='/portfolio'
-                                    className='pt-12 flex justify-center text-hi-light2 shadow-dark3 text-xl hover:text-hi-light1 pl-2'>View Portfolio
+                                    className='pt-6 pb-6 flex justify-center text-hi-light2 shadow-dark3 text-xl hover:text-hi-light1 pl-2'>View Portfolio
                                 </Link>
                             
                         </div>  
