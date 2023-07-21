@@ -22,7 +22,7 @@ const HeroClient = ({ heading, intro }) => {
 
   return (
 <>
-    <div className=' overflow-auto bg-light1 flex flex-col xl:flex-row h-screen m-auto pt-[46px] xl:pt-0 border-b'>
+    <div className=' bg-light1 flex flex-col xl:flex-row min-h-screen m-auto pt-[46px] xl:pt-0 border-b'>
        
          
         {imageLoaded && (
