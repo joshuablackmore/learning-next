@@ -2,6 +2,7 @@
 import FullScreenImage from './fullscreen';
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion'
 
 
 export default function ClientPortfolio({ image, name, id, alt }) {
@@ -17,7 +18,11 @@ export default function ClientPortfolio({ image, name, id, alt }) {
 
   return (
     <>
-      <div key={id}>
+      <motion.div key={id}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}>
+      
         <Image 
         loading="lazy"
         width='450' height='300' className="rounded-lg"
@@ -29,7 +34,7 @@ export default function ClientPortfolio({ image, name, id, alt }) {
       {fullscreenImage && (
         <FullScreenImage imageUrl={fullscreenImage} onClose={handleCloseFullscreen} loading='lazy' />
       )}
-    </div>
+    </motion.div>
     
     </>
   );

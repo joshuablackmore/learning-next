@@ -9,11 +9,7 @@ export default function Home() {
  
   return (
     <main className="">
-      <HeroServer />
-      <Portfolio />
-      
- 
-        
+      <HeroServer /> 
     </main>
     
   )

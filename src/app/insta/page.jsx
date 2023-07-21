@@ -1,4 +1,5 @@
-import Image from "next/image";
+import ClientInsta from './client-insta'
+
 
 async function getPics() {
   const token = process.env.Instagram_API_KEY
@@ -16,19 +17,7 @@ const Gallery = async () => {
 
   return (
 
-    <div className=' bg-light2 flex flex-col pt-20 gap-2 sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 '>
-      {lessPics.map((pic) => {
-      return (
-      <div key={pic.id} className="flex justify-center">
-        <Image loading="lazy" src={pic.media_url} width='450' height='300' className="rounded-lg" alt="insta feed"/>
-      
-      </div>
-      )
-      
-      
-    })}
-     
-    </div>
+    <ClientInsta lessPics={lessPics} />
 
   )
 }

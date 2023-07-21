@@ -2,11 +2,7 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { PortableText } from '@portabletext/react'
-
-
-
-
-
+import Link from 'next/link'
 
 const HeroClient = ({ heading, intro }) => {
     const [imageLoaded, setImageLoaded] = useState(false);
@@ -21,55 +17,58 @@ const HeroClient = ({ heading, intro }) => {
             setImageSrc(image.src)
             setImageLoaded(true)
         };
-        // console.log(image)
     }, []);
 
-    
-    
+
   return (
 <>
-    <div className='flex flex-col xl:flex-row h-screen m-auto pt-[46px] xl:pt-0 border-b'>
+    <div className=' bg-light1 flex flex-col xl:flex-row h-screen m-auto pt-[46px] xl:pt-0 border-b'>
        
          
-                {imageLoaded && (
-                <motion.div
-                initial={{ x: -1000, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className='flex min-h-[395px] h-[50%] md:h-[60%] lg:h-[80%] xl:h-[100%] justify-center '
-                >
+        {imageLoaded && (
+        <motion.div
+        initial={{ x: -1000, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+        className='flex min-h-[395px] h-[50%] md:h-[60%] lg:h-[80%] xl:h-[100%] xl:border-r justify-center '
+        >
                     <img src={imageSrc} alt='hero pic' className=' object-cover xl:object-left '></img>
-                    </motion.div>
-                )}
+            </motion.div>
+        )}
             
            
-                    <div className='h-[50%] w-[100%] flex items-center   '>
-                        {imageLoaded && (
-                        <motion.div
-                        initial={{ opacity: 0}}
-                        animate={{ opacity: 1}}
-                        transition={{ delay: 0.8, duration: 1.5 }}
-                        className=' h-full w-full flex items-start m-2 md:mx-2 xl:mx-20  '>
-                        <div className=' my-6'>
-                            <h1 className=' m-2 text-2xl'>{heading}</h1>
-                            <div className='pl-2 pt-8'><PortableText value={intro[0]} /></div>
+            <div className='h-[50%] w-[100%] flex flex-col items-center '>
+                {imageLoaded && (
+                <motion.div
+                initial={{ opacity: 0}}
+                animate={{ opacity: 1}}
+                transition={{ delay: 0.8, duration: 1.5 }}
+                className='w-full flex flex-col  items-start md:mx-2 xl:mx-20  '>
+                <div className='pt-6'>
+                    <h1 className=' text-dark3 text-2xl flex justify-center'>{heading}</h1>
+                        <div className='flex flex-col justify-center m-3 text-dark3 pl-2 pt-8'>
+                            <PortableText value={intro[0]} />
+                                <Link 
+                                    href='/portfolio'
+                                    className='pt-12 flex justify-center text-hi-light2 shadow-dark3 text-xl hover:text-hi-light1 pl-2'>View Portfolio
+                                </Link>
                             
-                        </div>
-                        
-                        
-                        </motion.div>
-                    )}
-                    </div>
+                        </div>  
+                         
+                </div> 
+     
+                </motion.div>
+                )}
+                    
+            </div>
+                    
+                
                       
               
-    </div>
-
-        
-        
-       
+    </div>    
 </>       
     
-  )
-}
+  );
+};
 
 export default HeroClient

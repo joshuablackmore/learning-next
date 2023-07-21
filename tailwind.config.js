@@ -7,11 +7,13 @@ module.exports = {
   ],
   theme: {
     colors: {
-      'light1': '#FFFFFF',
-      'light2': '#FFFFFF',
-      'dark1': '#534B52',
+      'light1': '#E7E5DF',
+      'light2': '#D3D0CB',
+      'dark1': '#393E41',
       'dark2': '#474448',
       'dark3': '#2D232E',
+      'hi-light1': '#44BBA4',
+      'hi-light2': '#E7BB41',
     }
   },
   plugins: [],
