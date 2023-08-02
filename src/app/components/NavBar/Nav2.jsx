@@ -3,12 +3,13 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai';
-import { useRouter } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import styles from './styles.module.css';
+import { usePathname } from 'next/navigation';
 
 const Nav2 = () => {
-  const router = useRouter();
+  const pathname = usePathname();
+
 
   const [nav, setNav] = useState(false);
   const handleNav = () => {
@@ -29,12 +30,13 @@ const Nav2 = () => {
   }, [nav]);
 
   const navigationLinks = [
-    { path: './portfolio', label: 'Portfolio'},
+    { path: '/', label: 'Home'},
+    { path: '/portfolio', label: 'Portfolio' },
     { path: '/insta', label: 'Instagram' },
     { path: '/blog', label: 'Blog' },
     { path: '/contact', label: 'Contact' },
   ];
-
+  
   return (
     <>
       <div className="box-border">
@@ -51,7 +53,9 @@ const Nav2 = () => {
             </Link>
               </div>
               <div className="flex flex-row space-x-6">
-                {navigationLinks.map((link, index) => (
+                {navigationLinks.map((link, index) => {
+                  const isActive = pathname === link.path
+                  return (
                   <motion.div
                     className='text-dark3 hover:text-hi-light1'
                     key={index}
@@ -59,9 +63,15 @@ const Nav2 = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                   >
-                    <Link href={link.path}>{link.label}</Link>
+                    <Link 
+                    href={link.path}
+                    className={isActive ? 'text-hi-light1' :''}
+                    >
+                      {link.label}
+                    </Link>
+
                   </motion.div>
-                ))}
+                )})}
               </div>
             </div>
           )}
@@ -88,7 +98,7 @@ const Nav2 = () => {
         <AnimatePresence>
           {nav && (
             <motion.div
-              className=" flex items-center justify-center z-[500] h-[50%] absolute w-[100%] bg-hi-light2 text-dark3  border-b left-0 right-0"
+              className=" flex items-center justify-center z-[500] h-[100%] sm:h-[50%] absolute w-[100%] bg-hi-light2 text-dark3  border-b left-0 right-0"
               initial={{ opacity: 0, translateY: '-100%' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 1, translateY: '-100%' }}
@@ -96,9 +106,11 @@ const Nav2 = () => {
             >
               <div
                 onClick={handleNav}
-                className="flex  sm:text-lg md:text-xl lg:text-2xl flex-col space-y-8 uppercase font-bold  items-center"
+                className="flex sm:text-lg md:text-xl lg:text-2xl flex-col space-y-8 uppercase font-bold items-center"
               >
-                {navigationLinks.map((link, index) => (
+                {navigationLinks.map((link, index) => {
+                  const isActive = pathname === link.path
+                  return (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0 }}
@@ -106,9 +118,13 @@ const Nav2 = () => {
                     transition={{ duration: 0.8, delay: index * 0.3 }}
                     style={{ opacity: 0 }}
                   >
-                    <Link className='hover:text-hi-light1' href={link.path}>{link.label}</Link>
+                    <Link 
+                      href={link.path}
+                      className={isActive ? ' text-hi-light1 underline':''}>
+                        {link.label}
+                    </Link>
                   </motion.div>
-                ))}
+                )})}
               </div>
             </motion.div>
           )}

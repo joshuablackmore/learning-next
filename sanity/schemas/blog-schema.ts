@@ -5,7 +5,7 @@ const blog = {
     fields: [
         {
             name: 'name',
-            title: 'Name',
+            title: 'Title',
             type: 'string'
         },
         {
@@ -26,6 +26,11 @@ const blog = {
                     type: 'string'
                 }
             ]
+        },
+        {
+            name: 'excerpt',
+            title: 'Excerpt',
+            type: 'string'
         },
         {
           name: 'content',

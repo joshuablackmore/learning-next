@@ -3,9 +3,6 @@ import HeroClient from './client-comp'
 
 export default async function HeroServer() {
     const data = await getHome();
-
-    console.log(data)
-    
     
   return (  
 

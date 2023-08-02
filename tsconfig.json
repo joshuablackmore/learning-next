@@ -28,7 +28,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/app/test/getData.ts"  ],
+, "src/app/test/getData.ts", "src/app/api/contact/route.js", "src/app/contact/page.jsx"  ],
   "exclude": [
     "node_modules"
   ]

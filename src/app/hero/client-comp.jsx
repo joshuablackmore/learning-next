@@ -50,7 +50,7 @@ const HeroClient = ({ heading, intro }) => {
                             <PortableText value={intro[0]} />
                                 <Link 
                                     href='/portfolio'
-                                    className='pt-6 pb-6 flex justify-center text-hi-light2 shadow-dark3 text-xl hover:text-hi-light1 pl-2'>View Portfolio
+                                    className='pt-6 pb-6 flex justify-center text-hi-light2 text-xl hover:text-hi-light1 pl-2'>View Portfolio
                                 </Link>
                             
                         </div>  

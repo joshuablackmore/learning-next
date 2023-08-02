@@ -16,10 +16,10 @@ const ClientInsta = ({lessPics}) => {
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-
-            key={pic.id} className="flex justify-center">
-        <Image loading="lazy" src={pic.media_url} width='450' height='300' className="rounded-lg" alt="insta feed"/>
-      
+            key={pic.id} 
+            className="flex flex-col justify-center items-center border-b sm:border-b-light1 m-2">
+                <Image loading="lazy" src={pic.media_url} width='450' height='300' className="m-2 rounded-md" alt="insta feed"/>
+                    <p className='m-2'>...{pic.caption.slice(0,20)}....</p>
             </motion.div>
              )
       
