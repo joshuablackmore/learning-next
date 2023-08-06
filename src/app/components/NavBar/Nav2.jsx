@@ -61,7 +61,7 @@ const Nav2 = () => {
                     key={index}
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    transition={{ duration: 0.2, delay: index * 0.1 }}
                   >
                     <Link 
                     href={link.path}
@@ -102,7 +102,7 @@ const Nav2 = () => {
               initial={{ opacity: 0, translateY: '-100%' }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 1, translateY: '-100%' }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.4 }}
             >
               <div
                 onClick={handleNav}
@@ -115,12 +115,12 @@ const Nav2 = () => {
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: index * 0.3 }}
+                    transition={{ duration: 0.4, delay: index * 0.2 }}
                     style={{ opacity: 0 }}
                   >
                     <Link 
                       href={link.path}
-                      className={isActive ? ' text-hi-light1 underline':''}>
+                      className={isActive ? ' text-hi-light1':''}>
                         {link.label}
                     </Link>
                   </motion.div>
