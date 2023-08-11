@@ -21,18 +21,18 @@ const HeroClient = ({ heading, intro }) => {
 
   return (
     <>
-      <div className=" bg-light1 flex flex-col xl:flex-row min-h-screen m-auto pt-[46px] xl:pt-0 border-b">
+      <div className=" bg-light1 flex flex-col min-h-screen m-auto pt-[46px] xl:pt-0 border-b">
         {imageLoaded && (
           <motion.div
             initial={{ x: -1000, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="flex min-h-[395px] h-[50%] md:h-[60%] lg:h-[80%] xl:h-[100%] xl:border-r justify-center "
+            className="flex min-h-[395px] h-[50%] md:h-[60%] lg:h-[80%] xl:flex-col justify-center "
           >
             <img
               src={imageSrc}
               alt="hero pic"
-              className=" object-cover xl:object-left "
+              className=" object-cover"
             ></img>
           </motion.div>
         )}
@@ -51,12 +51,12 @@ const HeroClient = ({ heading, intro }) => {
                 </h1>
                 <div className="flex flex-col justify-center m-3 text-xl font-light pl-2 pt-8">
                   <PortableText value={intro[0]} />
-                  <Link
+                  {/* <Link
                     href="/portfolio"
                     className="pt-6 pb-6 flex justify-center text-hi-light2 text-xl hover:text-hi-light1 pl-2"
                   >
                     View Portfolio
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
             </motion.div>
