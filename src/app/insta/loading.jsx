@@ -1,11 +1,9 @@
 const loading = () => {
-    return (
-      <>
+  return (
+    <>
       <div className="h-screen ">loading instagram feed...</div>
-  
-  
-      </>
-    )
-  }
-  
-  export default loading
+    </>
+  );
+};
+
+export default loading;

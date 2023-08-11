@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import styles from './styles.module.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import styles from "./styles.module.css";
 
 const FullScreenImage = ({ imageUrl, onClose }) => {
   const handleClick = (event) => {
@@ -14,7 +14,7 @@ const FullScreenImage = ({ imageUrl, onClose }) => {
         <img className={styles.image} src={imageUrl} alt="Fullscreen" />
       </div>
     </div>,
-    document.body
+    document.body,
   );
 };
 

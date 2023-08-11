@@ -1,20 +1,9 @@
-import HeroServer from './hero/page'
-
-
-
-
-
-
+import HeroServer from "./hero/page";
 
 export default function Home() {
-
- 
   return (
     <main className="">
-      <HeroServer /> 
-      
-      
+      <HeroServer />
     </main>
-    
-  )
+  );
 }

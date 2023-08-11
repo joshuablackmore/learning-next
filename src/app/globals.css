@@ -8,13 +8,11 @@
   margin: 0;
 }
 
-
 .hero-img {
-  background-image: url('../../public/pete-cropped.jpg');
+  background-image: url("../../public/pete-cropped.jpg");
 }
 
 .container {
   min-height: 100vh;
   min-width: 100vw;
 }
-

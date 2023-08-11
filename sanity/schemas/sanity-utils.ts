@@ -91,7 +91,7 @@ export async function getDynamicBlog(slug: string): Promise<Blog> {
             _createdAt,
             name,
             "slug": slug.current,
-            "image": image.assat->url,
+            "image": image.asset->url,
             content,
         }`,
         { slug }
