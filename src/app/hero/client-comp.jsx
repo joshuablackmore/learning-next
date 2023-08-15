@@ -16,6 +16,7 @@ const HeroClient = ({ heading, intro }) => {
     <div className="h-screen overflow-auto">
         <div className="relative border-b h-[60%] md:h-[60%] lg:h-[70%] xl:h-[100%]">
             <Image
+            alt="hero image"
             src={profPic}
             fill={true}
             objectFit="cover"
