@@ -15,7 +15,7 @@ export default async function Blogs({ params }: Props) {
   return (
     <div className="pt-[45px] min-h-screen border m-auto">
       
-      
+      <div className="w-screen">
         <Image
         src={blogs.image}
         width={500}
@@ -23,7 +23,7 @@ export default async function Blogs({ params }: Props) {
         alt={blogs.name}
         className=""
       />
-      
+      </div>
       
       
       <div className="pt-4 m-2">

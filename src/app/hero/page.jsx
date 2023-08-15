@@ -5,7 +5,7 @@ export default async function HeroServer() {
   const data = await getHome();
 
   return (
-    <div>
+    <div className="pt-[45px] xl:pt-[60px]">
       {data.map((info) => (
         <div key={info._id}>
           <HeroClient heading={info.heading} intro={info.intro} />

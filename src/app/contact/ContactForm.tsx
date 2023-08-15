@@ -50,7 +50,7 @@ export default function ContactForm() {
     </motion.div>
   ) : (
     <motion.div
-      initial={{ x: -500 }}
+      initial={{ x: -1000 }}
       animate={{ x: 0 }}
       transition={{ duration: 0.2, delay: 0.5 }}
       className="h-[50%]"
