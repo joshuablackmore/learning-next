@@ -13,8 +13,8 @@ const HeroClient = ({ heading, intro }) => {
 
 
   return (
-    <div className="h-screen overflow-auto">
-        <div className="relative border-b h-[60%] md:h-[60%] lg:h-[70%] xl:h-[100%]">
+    <div className="h-screen">
+        <div className="relative border-b h-[50%] md:h-[60%] lg:h-[70%] xl:h-[100%]">
             <Image
             alt="hero image"
             src={profPic}
@@ -30,13 +30,13 @@ const HeroClient = ({ heading, intro }) => {
             />  
         </div>
          
-        <div className=" flex flex-col m-auto min-h-[375px] h-[40%]">
+        <div className=" flex flex-col min-h-[375px] h-[50%]">
           {imageLoaded &&  
           <motion.div 
           initial={{ x: -500 }}
           animate={{ x: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col px-6 md: m-auto gap-12">
+          className="flex flex-col px-6 md: m-auto gap-12 h-[75%]">
             <h1 className="text-4xl ">{heading}</h1>
             <div className="text-md sm:text-2xl">
             <PortableText value={intro} />
