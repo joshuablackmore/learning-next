@@ -14,7 +14,7 @@ async function getPics() {
 const Gallery = async () => {
   const insta = await getPics();
   const lessPics = insta.data.slice(0, 8);
-
+  
   console.log(lessPics);
 
   return <ClientInsta lessPics={lessPics} />;

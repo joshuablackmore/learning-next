@@ -13,15 +13,15 @@ export default async function Blogs({ params }: Props) {
   console.log(blogs);
 
   return (
-    <div className="pt-[45px] min-h-screen border m-auto">
+    <div className="flex flex-col pt-[45px] xl:pt-[58px] h-screen border m-auto">
       
-      <div className="w-screen">
+      <div className="h-[50%] lg:h-[65%] relative max-w-6xl w-full mx-auto">
         <Image
         src={blogs.image}
-        width={500}
-        height={500}
+        fill={true}
         alt={blogs.name}
-        className=""
+        objectFit="cover"
+        
       />
       </div>
       
