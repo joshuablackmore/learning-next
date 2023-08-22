@@ -41,7 +41,7 @@ const Nav2 = () => {
         {/* large sreen nav */}
         <div>
           {!nav && (
-            <div className="hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center border-b fixed w-full">
+            <div className="z-50 hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center border-b fixed w-full">
               <div className="flex ml-2 xl:text-3xl">
                 <Link href="./" onClick={closeNav}>
                   <h1>
