@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
-import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { AiOutlineMenu, AiOutlineClose, AiFillInstagram } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./styles.module.css";
 import { usePathname } from "next/navigation";
@@ -33,6 +33,7 @@ const Nav2 = () => {
     { path: "/insta", label: "Instagram" },
     { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
+    { path: "https://www.instagram.com/petedblackmore", label: <AiFillInstagram size={30} />},
   ];
 
   return (
