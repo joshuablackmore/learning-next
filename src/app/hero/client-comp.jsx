@@ -14,7 +14,7 @@ const HeroClient = ({ heading, intro }) => {
 
   return (
     <div className="h-screen">
-        <div className="relative border-b h-[50%] md:h-[60%] lg:h-[70%] xl:h-[100%]">
+        <div className=" min-h-[275px] relative border-b h-[50%] md:h-[60%] lg:h-[70%] xl:h-[100%]">
             <Image
             alt="hero image"
             src={profPic}

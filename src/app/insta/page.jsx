@@ -17,7 +17,9 @@ const Gallery = async () => {
   
   console.log(lessPics);
 
-  return <ClientInsta lessPics={lessPics} />;
+  return <ClientInsta lessPics={lessPics} />
+
+  
 };
 
 export default Gallery;

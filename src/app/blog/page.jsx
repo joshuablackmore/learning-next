@@ -5,7 +5,7 @@ const Blog = async () => {
   const blogPosts = await getBlog();
 
   return (
-    <div className="pt-[45px] xl:pt-[60px] min-h-screen">
+    <div className="pt-[45px] pb-4 xl:pt-[60px] min-h-screen">
     <h1 className="text-center my-4 text-xl">Blogs</h1>
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {blogPosts.map((posts) => (
