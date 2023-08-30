@@ -4,48 +4,52 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import { instaMedia } from "./page";
 
-const ClientInsta = ({ lessPics }) => {
+
+const ClientInsta:React.FC<instaMedia> = ({ media_url, media_type, id, caption }) => {
+
+  
   return (
-    <div className="pt-[45px] bg-light1 ">
-      <h1 className="m-4 flex justify-center">Recent Instagram posts</h1>
-      
-      <div className="pb-10 flex flex-col gap-2 sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 ">
-        {lessPics.map((pic) => (
+    <div>
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            key={pic.id}
+            key={id}
             className="flex flex-col justify-center items-center border-b sm:border-b-light1 m-2"
           >
-            {pic.media_type === 'IMAGE' ? (
+            {media_type === 'IMAGE' ? (
             <>
               <Image
               loading="lazy"
-              src={pic.media_url}
+              src={media_url}
               width="450"
               height="300"
               className="m-2 rounded-md"
               alt="insta feed"
             /> 
+            <p className="mx-4 ">{caption}</p>
             </> 
             
             ): 
-
+            <>
             <video 
-            src={pic.media_url}
-            controls='true'
+            src={media_url}
+            controls
             className="m-2 rounded-md"
             autoPlay
             muted
-            playsinline
+            playsInline
+            
             >
-            </video> }
+            </video> 
+            <p className="mx-4 ">{caption}</p>
+            </>
+            }
            
           </motion.div>
-        ))}
-      </div>
+    
     </div>
   );
 };

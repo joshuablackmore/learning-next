@@ -14,10 +14,7 @@ export async function getArtwork(): Promise<Artwork[]>{
 
     return client.fetch(
         groq`*[_type == "artwork"]{
-            _id,
-            _createdAt,
-            name,
-            alt,
+            ...,
             "image": image.asset->url,
         }`
     )
@@ -73,7 +70,7 @@ export async function getBlog(): Promise<Blog[]>{
             alt,
             content,
             excerpt,
-            slug,
+            "slug": slug.current,
         }`
     )
 };

@@ -4,7 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion'
 
-const BlogClient = ({ title, image, content, slug, excerpt }) => {
+type blogParams = {
+  title : string,
+  image : string,
+  slug :  string,
+  excerpt : string
+}
+
+const BlogClient : React.FC<blogParams> = ({ title, image, slug, excerpt }) => {
   return (
       <div>
       <motion.div 

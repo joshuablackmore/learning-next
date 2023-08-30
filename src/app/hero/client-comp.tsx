@@ -1,11 +1,16 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { PortableText } from "@portabletext/react";
+import { PortableTextBlock } from "sanity";
 import Image from "next/image";
 
+interface heroProps {
+  heading : string,
+  intro: PortableTextBlock[]
+}
 
-const HeroClient = ({ heading, intro }) => {
+const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   
   const profPic =

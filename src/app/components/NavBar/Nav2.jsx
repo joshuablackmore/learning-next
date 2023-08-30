@@ -121,7 +121,7 @@ const Nav2 = () => {
                       key={index}
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      transition={{ duration: 0.4, delay: index * 0.2 }}
+                      transition={{ duration: 0.3, delay: index * 0.2 }}
                       style={{ opacity: 0 }}
                     >
                       <Link
