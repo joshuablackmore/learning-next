@@ -104,7 +104,7 @@ const Nav2 = () => {
         <AnimatePresence>
           {nav && (
             <motion.div
-              className=" flex items-center justify-center z-[500] h-[100%] absolute w-[100%] bg-hi-light2 text-dark3  border-b left-0 right-0"
+              className=" flex items-center justify-center z-[500] h-[100%] fixed w-[100%] bg-hi-light2 text-dark3  border-b left-0 right-0"
               initial={{ opacity: 0, translateY: "-100%" }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 1, translateY: "-100%" }}
