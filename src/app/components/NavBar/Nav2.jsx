@@ -32,7 +32,7 @@ const Nav2 = () => {
     { path: "/portfolio", label: "Portfolio" },
     { path: "/insta", label: "Instagram" },
     { path: "/blog", label: "Blog" },
-    { path: "/contact", label: "Contact" },
+    { path: "/contact2", label: "Contact" },
     { path: "https://www.instagram.com/petedblackmore", label: <AiFillInstagram size={30} />},
   ];
 

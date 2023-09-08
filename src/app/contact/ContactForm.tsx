@@ -29,6 +29,7 @@ export default function ContactForm() {
       });
       if (res.status === 200) {
         setSubmitted(true);
+        console.log(res)
       }
     } catch (err: any) {
       console.error("Err", err);

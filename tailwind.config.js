@@ -15,7 +15,7 @@ module.exports = {
       'dark3': '#2D232E',
       'hi-light1': '#44BBA4',
       'hi-light2': '#E7BB41',
-    }
+    },
   },
   plugins: [],
 }

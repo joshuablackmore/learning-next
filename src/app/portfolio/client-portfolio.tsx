@@ -4,6 +4,8 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+
+
 export default function ClientPortfolio({ image, name, id, alt }) {
   const [fullscreenImage, setFullscreenImage] = useState(null);
 
@@ -38,7 +40,7 @@ export default function ClientPortfolio({ image, name, id, alt }) {
           <FullScreenImage
             imageUrl={fullscreenImage}
             onClose={handleCloseFullscreen}
-            loading="lazy"
+            
           />
         )}
       </motion.div>

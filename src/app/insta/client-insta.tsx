@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
@@ -8,6 +8,8 @@ import { instaMedia } from "./page";
 
 
 const ClientInsta:React.FC<instaMedia> = ({ media_url, media_type, id, caption }) => {
+
+  const [imagesLoaded, setImagesLoaded] = useState(false)
 
   
   return (
@@ -26,8 +28,12 @@ const ClientInsta:React.FC<instaMedia> = ({ media_url, media_type, id, caption }
               src={media_url}
               width="450"
               height="300"
-              className="m-2 rounded-md"
+              className="m-2 rounded-md opacity-0"
               alt="insta feed"
+              onLoadingComplete={(image) => {
+                image.classList.remove('opacity-0')
+                setImagesLoaded(true)
+            }}
             /> 
             <p className="mx-4 ">{caption}</p>
             </> 
@@ -41,6 +47,8 @@ const ClientInsta:React.FC<instaMedia> = ({ media_url, media_type, id, caption }
             autoPlay
             muted
             playsInline
+            poster="public/next.svg"
+            preload="auto"
             
             >
             </video> 

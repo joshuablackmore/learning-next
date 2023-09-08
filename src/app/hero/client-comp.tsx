@@ -1,5 +1,5 @@
 "use client";
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "sanity";
@@ -24,7 +24,7 @@ const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
 
   return (
     <div className="h-screen">
-        <div className=" min-h-[275px] relative border-b h-[50%] md:h-[60%] lg:h-[70%] xl:h-[100%]">
+        <div className=" min-h-[275px] relative border-b h-[50%] md:h-[60%] lg:h-[70%] xl:h-[100%] 2xl:h-[calc(100%-60px)] ">
             <Image
             alt="hero image"
             src={profPic}
