@@ -3,7 +3,10 @@ import ContactForm2 from './ContactForm2'
 
 const page = () => {
   return (
-    <ContactForm2 />
+    
+        <ContactForm2 />
+
+  
   )
 }
 

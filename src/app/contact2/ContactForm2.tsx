@@ -51,9 +51,8 @@ const ContactForm2 = () => {
             <span>Thanks for you message!</span>
         :
        
-
             <form onSubmit={handleSubmit(onSubmit)}
-            className=' flex flex-col justify-center space-y-8 w-[50%] h-[50%]'>
+            className=' flex flex-col justify-center space-y-8 w-[80%] md:w-[60%] lg:w-[40%] h-[50%]'>
            
             <input 
             className='border border-hi-light1 hover:border-hi-light2 hover:bg-hi-light2/10 rounded-md p-2'
