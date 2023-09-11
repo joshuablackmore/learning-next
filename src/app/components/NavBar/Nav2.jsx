@@ -33,7 +33,10 @@ const Nav2 = () => {
     { path: "/insta", label: "Instagram" },
     { path: "/blog", label: "Blog" },
     { path: "/contact2", label: "Contact" },
-    { path: "https://www.instagram.com/petedblackmore", label: <AiFillInstagram size={30} />},
+    {
+      path: "https://www.instagram.com/petedblackmore",
+      label: <AiFillInstagram size={30} />,
+    },
   ];
 
   return (
@@ -42,12 +45,12 @@ const Nav2 = () => {
         {/* large sreen nav */}
         <div>
           {!nav && (
-            <div className="z-50 hidden xl:flex bg-light1 flex-row justify-between h-[60px] space-x-8 xl:right-0 xl:pr-20 font-bold items-center border-b fixed w-full">
-              <div className="flex ml-2 xl:text-3xl">
+            <div className="fixed z-50 hidden h-[60px] w-full flex-row items-center justify-between space-x-8 border-b bg-light1 font-bold xl:right-0 xl:flex xl:pr-20">
+              <div className="ml-2 flex xl:text-3xl">
                 <Link href="./" onClick={closeNav}>
                   <h1>
-                    <span className="text-dark3 font-extrabold">Peter</span>
-                    <span className="text-dark2 font-light">Blackmore</span>
+                    <span className="font-extrabold text-dark3">Peter</span>
+                    <span className="font-light text-dark2">Blackmore</span>
                   </h1>
                 </Link>
               </div>
@@ -56,7 +59,7 @@ const Nav2 = () => {
                   const isActive = pathname === link.path;
                   return (
                     <motion.div
-                      className="text-dark3 hover:text-hi-light1 text-xl"
+                      className="text-xl text-dark3 hover:text-hi-light1"
                       key={index}
                       initial={{ opacity: 0, y: -30 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -77,20 +80,20 @@ const Nav2 = () => {
         </div>
 
         {/* small screen nav */}
-        <div className="fixed border-b w-[100%] bg-light1  z-[700] xl:hidden">
-          <div className="flex items-center justify-between w-full ">
-            <div className="flex ml-2 text-2xl lg:text-3xl">
+        <div className="fixed z-[700] w-[100%] border-b  bg-light1 xl:hidden">
+          <div className="flex w-full items-center justify-between ">
+            <div className="ml-2 flex text-2xl lg:text-3xl">
               <Link href="./" onClick={closeNav}>
                 <h1>
-                  <span className="text-fontDark1 font-extrabold">Peter</span>
-                  <span className="text-fontDark1 font-light">Blackmore</span>
+                  <span className="font-extrabold text-fontDark1">Peter</span>
+                  <span className="font-light text-fontDark1">Blackmore</span>
                 </h1>
               </Link>
             </div>
 
             <div
               onClick={handleNav}
-              className="flex z-10 m-2 justify-end xl:hidden bg-transparent"
+              className="bg-transparent z-10 m-2 flex justify-end xl:hidden"
             >
               {!nav ? (
                 <AiOutlineMenu size={30} />
@@ -104,7 +107,7 @@ const Nav2 = () => {
         <AnimatePresence>
           {nav && (
             <motion.div
-              className=" flex items-center justify-center z-[500] h-[100%] fixed w-[100%] bg-hi-light2 text-dark3  border-b left-0 right-0"
+              className=" fixed left-0 right-0 z-[500] flex h-[100%] w-[100%] items-center justify-center  border-b bg-hi-light2 text-dark3"
               initial={{ opacity: 0, translateY: "-100%" }}
               animate={{ opacity: 1, translateY: 0 }}
               exit={{ opacity: 1, translateY: "-100%" }}
@@ -112,7 +115,7 @@ const Nav2 = () => {
             >
               <div
                 onClick={handleNav}
-                className="flex text-xl md:text-xl lg:text-2xl flex-col space-y-8 uppercase font-bold items-center"
+                className="flex flex-col items-center space-y-8 text-xl font-bold uppercase md:text-xl lg:text-2xl"
               >
                 {navigationLinks.map((link, index) => {
                   const isActive = pathname === link.path;

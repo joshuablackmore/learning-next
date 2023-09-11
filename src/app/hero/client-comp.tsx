@@ -6,8 +6,8 @@ import { PortableTextBlock } from "sanity";
 import Image from "next/image";
 
 interface heroProps {
-  heading : string,
-  intro: PortableTextBlock[]
+  heading: string;
+  intro: PortableTextBlock[];
 }
 
 const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
@@ -15,78 +15,77 @@ const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
   const [bioSlider, setBioSlider] = useState(false);
 
   const handleBioSlider = () => {
-    setBioSlider(!bioSlider)
-  }
-  
+    setBioSlider(!bioSlider);
+  };
+
   const profPic =
     "https://cdn.sanity.io/images/7gqekvwy/production/f2c223bda4880132ba053f98d50c5f98e8f06e95-1331x687.jpg?w=2000&fit=max&auto=format&dpr=2";
 
-
   return (
     <div className="h-screen">
-        <div className=" min-h-[275px] relative border-b h-[50%] md:h-[60%] lg:h-[70%] xl:h-[100%] 2xl:h-[calc(100%-60px)] ">
-            <Image
-            alt="hero image"
-            src={profPic}
-            fill={true}
-            objectFit="cover"
-            className="object-left opacity-0 duration-700"
-            onLoadingComplete={(image) => {
-                image.classList.remove('opacity-0')
-                setImageLoaded(true)
-            }}
-            />
+      <div className=" relative h-[50%] min-h-[275px] border-b md:h-[60%] lg:h-[70%] xl:h-[100%] 2xl:h-[calc(100%-60px)] ">
+        <Image
+          alt="hero image"
+          src={profPic}
+          fill={true}
+          objectFit="cover"
+          className="object-left opacity-0 duration-700"
+          onLoadingComplete={(image) => {
+            image.classList.remove("opacity-0");
+            setImageLoaded(true);
+          }}
+        />
 
-        
-            {imageLoaded && (
-            <motion.div 
-            initial={{y:-50}}
-            animate={{y:0}}
+        {imageLoaded && (
+          <motion.div
+            initial={{ y: -50 }}
+            animate={{ y: 0 }}
             transition={{ duration: 1, delay: 1 }}
-            className="absolute flex-col right-0 left-100 top-0 bottom-0 h-full w-[50%] items-end hidden 2xl:flex z-10 ">
-              <button 
-              className=" bg-hi-light2 hover:bg-hi-light1 flex justify-end h-12 items-center text-light2 px-12 text-2xl z-50 rounded-bl-lg"
+            className="left-100 absolute bottom-0 right-0 top-0 z-10 hidden h-full w-[50%] flex-col items-end 2xl:flex "
+          >
+            <button
+              className=" z-50 flex h-12 items-center justify-end rounded-bl-lg bg-hi-light2 px-12 text-2xl text-light2 hover:bg-hi-light1"
               onClick={handleBioSlider}
-              >
-              click for bio</button>
-              </motion.div>)}
-            
+            >
+              click for bio
+            </button>
+          </motion.div>
+        )}
 
-          <AnimatePresence>
-            {bioSlider && (
-            <motion.div 
-            initial={{ translateX: "100%" }}
-            animate={{ translateX: 0 }}
-            exit={{ translateX: "100%" }}
-            transition={{ duration: 1 }}
-            
-            className="hidden 2xl:flex flex-col justify-center items-center space-y-36 absolute bg-dark1/70 right-0 left-100 top-0 bottom-0 w-[50%] text-2xl text-light1">
-              <h1 className="text-4xl">{heading}</h1>
-              <div className=" mx-6">
-              <PortableText value={intro} />
+        <AnimatePresence>
+          {bioSlider && (
+            <motion.div
+              initial={{ translateX: "100%" }}
+              animate={{ translateX: 0 }}
+              exit={{ translateX: "100%" }}
+              transition={{ duration: 1 }}
+              className="left-100 absolute bottom-0 right-0 top-0 hidden w-[50%] flex-col justify-center gap-20 bg-dark1/70 text-2xl text-light1 2xl:flex"
+            >
+              <h1 className="mx-6 text-4xl">{heading}</h1>
+              <div className="mx-6 w-[70%]">
+                <PortableText value={intro} />
               </div>
-              </motion.div> 
-              )} 
-          </AnimatePresence>
-        </div>
-        
-         
-        <div className=" flex flex-col min-h-[375px] h-[50%] 2xl:hidden">
-          {imageLoaded &&  
-          <motion.div 
-          initial={{ x: -500 }}
-          animate={{ x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col px-6 md: m-auto gap-12 h-[75%]">
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+
+      <div className=" flex h-[50%] min-h-[375px] flex-col 2xl:hidden">
+        {imageLoaded && (
+          <motion.div
+            initial={{ x: -500 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="md: m-auto flex h-[75%] flex-col gap-12 px-6"
+          >
             <h1 className="text-4xl ">{heading}</h1>
             <div className="text-md sm:text-2xl">
-            <PortableText value={intro} />
+              <PortableText value={intro} />
             </div>
-            </motion.div> 
-            }
-        </div>
-       
-        </div>
+          </motion.div>
+        )}
+      </div>
+    </div>
   );
 };
 

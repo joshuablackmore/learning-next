@@ -6,12 +6,12 @@ export default async function Portfolio() {
 
   return (
     <>
-      <div className="min-h-screen bg-light1 flex flex-col pt-[45px] pb-10 gap-2 sm:grid sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3">
-        <h1 className="flex justify-center items-center font-bold text-xl pt-4">
+      <div className="flex min-h-screen flex-col gap-2 bg-light1 pb-10 pt-[45px] sm:grid sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3">
+        <h1 className="flex items-center justify-center pt-4 text-xl font-bold">
           Portfolio
         </h1>
         {data.map((imgs) => (
-          <div key={imgs._id} className="flex justify-center items-center">
+          <div key={imgs._id} className="flex items-center justify-center">
             <ClientPortfolio
               id={imgs._id}
               name={imgs.name}

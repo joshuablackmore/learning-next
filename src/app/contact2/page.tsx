@@ -1,13 +1,8 @@
-import React from 'react'
-import ContactForm2 from './ContactForm2'
+import React from "react";
+import ContactForm2 from "./ContactForm2";
 
 const page = () => {
-  return (
-    
-        <ContactForm2 />
+  return <ContactForm2 />;
+};
 
-  
-  )
-}
-
-export default page
+export default page;

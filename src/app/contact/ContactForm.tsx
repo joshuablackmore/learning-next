@@ -29,7 +29,7 @@ export default function ContactForm() {
       });
       if (res.status === 200) {
         setSubmitted(true);
-        console.log(res)
+        console.log(res);
       }
     } catch (err: any) {
       console.error("Err", err);
@@ -58,37 +58,37 @@ export default function ContactForm() {
     >
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col justify-around h-full rounded-md overflow-auto"
+        className="flex h-full flex-col justify-around overflow-auto rounded-md"
       >
-        <div className="flex flex-row gap-4 mx-6">
+        <div className="mx-6 flex flex-row gap-4">
           <BsFillPersonFill size={30} className="" />
           <input
             value={name}
             onChange={(e) => setName(e.target.value)}
             type="text"
-            className="border rounded-md w-full"
+            className="w-full rounded-md border"
             placeholder="  name"
             required
           />
         </div>
-        <div className="flex flex-row gap-4 mx-6">
+        <div className="mx-6 flex flex-row gap-4">
           <MdEmail size={30} />
           <input
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             type="email"
-            className="border rounded-md w-full"
+            className="w-full rounded-md border"
             placeholder="  email"
             required
           />
         </div>
-        <div className="flex flex-row gap-4 items-center mx-6 ">
+        <div className="mx-6 flex flex-row items-center gap-4 ">
           <BsPencilFill size={25} />
           <textarea
             rows={6}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            className="border rounded-md w-full"
+            className="w-full rounded-md border"
             placeholder="  .... ..... ....."
             required
           ></textarea>
@@ -96,7 +96,7 @@ export default function ContactForm() {
         <div className="flex flex-col items-center justify-center">
           <button
             type="submit"
-            className="border bg-hi-light1 hover:bg-hi-light2 p-2 rounded-lg text-[#fff]"
+            className="rounded-lg border bg-hi-light1 p-2 text-[#fff] hover:bg-hi-light2"
           >
             Submit
           </button>

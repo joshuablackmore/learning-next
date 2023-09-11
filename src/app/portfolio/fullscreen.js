@@ -12,7 +12,13 @@ const FullScreenImage = ({ imageUrl, onClose }) => {
   return ReactDOM.createPortal(
     <div className={styles.overlay} onClick={handleClick}>
       <div className={styles.imageContainer}>
-        <Image className={styles.image} src={imageUrl} alt="Fullscreen" fill={true} objectFit="contain" />
+        <Image
+          className={styles.image}
+          src={imageUrl}
+          alt="Fullscreen"
+          fill={true}
+          objectFit="contain"
+        />
       </div>
     </div>,
     document.body,

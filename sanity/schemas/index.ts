@@ -5,4 +5,4 @@ import profilePic from "./profilePic-schema";
 
 const schemas = [artwork, profilePic, home, blog];
 
-export default schemas
+export default schemas;
