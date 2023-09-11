@@ -62,7 +62,7 @@ const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
               className="left-100 absolute bottom-0 right-0 top-0 hidden w-[50%] flex-col justify-center gap-20 bg-dark1/70 text-2xl text-light1 2xl:flex"
             >
               <h1 className="mx-6 text-4xl">{heading}</h1>
-              <div className="mx-6 w-[70%]">
+              <div className="mx-6 w-[70%] leading-relaxed">
                 <PortableText value={intro} />
               </div>
             </motion.div>

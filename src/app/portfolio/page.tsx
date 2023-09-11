@@ -1,6 +1,7 @@
 import { getArtwork } from "../../../sanity/schemas/sanity-utils";
 import ClientPortfolio from "./client-portfolio";
 
+
 export default async function Portfolio() {
   const data = await getArtwork();
 
@@ -13,7 +14,7 @@ export default async function Portfolio() {
         {data.map((imgs) => (
           <div key={imgs._id} className="flex items-center justify-center">
             <ClientPortfolio
-              id={imgs._id}
+              _id={imgs._id}
               name={imgs.name}
               image={imgs.image}
               alt={imgs.alt}

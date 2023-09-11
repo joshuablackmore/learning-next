@@ -11,11 +11,11 @@ const Nav2 = () => {
   const pathname = usePathname();
 
   const [nav, setNav] = useState(false);
-  const handleNav = () => {
+  const handleNav = (): void => {
     setNav(!nav);
   };
 
-  const closeNav = () => {
+  const closeNav = (): void => {
     setNav(false);
   };
 

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import Image from "next/image";
 
 type FormValues = {
   name: string;
@@ -8,8 +9,12 @@ type FormValues = {
   message: string;
 };
 
+const tempPic: string =
+  "https://cdn.sanity.io/images/7gqekvwy/production/f2c223bda4880132ba053f98d50c5f98e8f06e95-1331x687.jpg?w=2000&fit=max&auto=format&dpr=2";
+
 const ContactForm2 = () => {
   const [formSuccess, setFormSuccess] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const {
     register,
@@ -47,14 +52,28 @@ const ContactForm2 = () => {
   };
 
   return (
-    <div className="h-screen pt-[45px] 2xl:pt-[60px]">
-      <div className="flex h-full items-center justify-center ">
+    <div className="h-screen pt-[45px] lg:flex 2xl:pt-[60px]">
+      <div className=" relative h-[40%] border bg-hi-light1 lg:h-full lg:w-[50%]">
+        <Image
+          src={tempPic}
+          fill
+          objectFit="cover"
+          alt="temp style photo"
+          className="object-left opacity-0 duration-700"
+          onLoadingComplete={(image) => {
+            image.classList.remove("opacity-0");
+            setImageLoaded(true);
+          }}
+        />
+      </div>
+
+      <div className="flex h-[60%] items-center justify-center lg:h-full lg:w-[50%] ">
         {formSuccess ? (
-          <span>Thanks for you message!</span>
+          <span>Thanks for your message!</span>
         ) : (
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className=" flex h-[50%] w-[80%] flex-col justify-center space-y-8 md:w-[60%] lg:w-[40%]"
+            className=" flex h-full w-[80%] flex-col justify-center space-y-8 md:w-[60%] lg:w-[80%] 2xl:w-[60%]"
           >
             <input
               className="rounded-md border border-hi-light1 p-2 hover:border-hi-light2 hover:bg-hi-light2/10"
@@ -90,12 +109,13 @@ const ContactForm2 = () => {
             )}
 
             <textarea
-              className="h-[40%] rounded-md border border-hi-light1 p-2 hover:border-hi-light2 hover:bg-hi-light2/10"
+              className=" rounded-md border border-hi-light1 p-2 hover:border-hi-light2 hover:bg-hi-light2/10"
               placeholder="message"
               {...register("message", {
                 required: "please include a message!",
                 minLength: 10,
               })}
+              rows={5}
             />
 
             {errors.message && errors.message.type === "required" && (

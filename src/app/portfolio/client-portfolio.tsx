@@ -4,7 +4,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function ClientPortfolio({ image, name, id, alt }) {
+type Artwork = {
+  image: string;
+  _id: string;
+  alt: string;
+  name: string;
+};
+
+export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
   const [fullscreenImage, setFullscreenImage] = useState(null);
 
   const handleImageClick = (imageUrl) => {
@@ -18,7 +25,7 @@ export default function ClientPortfolio({ image, name, id, alt }) {
   return (
     <>
       <motion.div
-        key={id}
+        key={_id}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
