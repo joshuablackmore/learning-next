@@ -21,7 +21,7 @@ const BlogClient: React.FC<blogParams> = ({ title, image, slug, excerpt }) => {
         className="relative flex h-[250px] items-center justify-center overflow-hidden rounded-xl border shadow-lg shadow-dark3 hover:shadow-none active:bg-hi-light1"
       >
         <Image
-          className="opacity-0 transition-opacity duration-[0.5s]"
+          className="opacity-0 transition-opacity duration-[0.5s] "
           onLoadingComplete={(image) => image.classList.remove("opacity-0")}
           loading="lazy"
           src={image}

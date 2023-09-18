@@ -7,7 +7,7 @@ export default async function Portfolio() {
 
   return (
     <>
-      <div className="flex min-h-screen flex-col gap-2 bg-light1 pb-10 pt-[45px] sm:grid sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3">
+      <div className="flex min-h-screen flex-col gap-2 bg-light1 pb-10 pt-[45px] lg:pt-[60px] sm:grid sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3">
         <h1 className="flex items-center justify-center pt-4 text-xl font-bold">
           Portfolio
         </h1>

@@ -13,8 +13,8 @@ export default async function Blogs({ params }: Props) {
   console.log(blogs);
 
   return (
-    <div className="m-auto flex h-screen flex-col border pt-[45px] xl:pt-[58px]">
-      <div className="relative mx-auto h-[50%] w-full max-w-6xl lg:h-[65%]">
+    <div className="m-auto flex h-screen flex-col border pt-[45px] xl:flex-row xl:pt-[58px]">
+      <div className="relative mx-auto min-h-[50%] w-full max-w-6xl lg:h-[65%] xl:h-full">
         <Image
           src={blogs.image}
           fill={true}
@@ -23,7 +23,7 @@ export default async function Blogs({ params }: Props) {
         />
       </div>
 
-      <div className="m-2 pt-4">
+      <div className="m-2 pt-4 xl:w-[70%] overflow-y-scroll">
         <h1>{blogs.name}</h1>
         <PortableText value={blogs.content} />
       </div>

@@ -29,6 +29,7 @@ export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8 }}
+        
       >
         <Image
           loading="lazy"
@@ -38,6 +39,7 @@ export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
           src={image}
           alt={alt}
           onClick={() => handleImageClick(image)}
+          
         />
 
         {/* Render the fullscreen image component if an image is clicked */}
