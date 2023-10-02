@@ -16,7 +16,7 @@ const ClientInsta: React.FC<instaMedia> = ({
   id,
   caption,
 }) => {
-  const [playing, setPlaying] = React.useState(false);
+  const [playing, setPlaying] = React.useState(true);
   const [muted, setMuted] = useState(true);
   const [hasWindow, setHasWindow] = React.useState(false);
   const [vidProgress, setVidProgress] = React.useState(0);
@@ -68,7 +68,7 @@ const ClientInsta: React.FC<instaMedia> = ({
                     setVidProgress(progress.playedSeconds);
                     if (progress.loadedSeconds > 10) {
                       setOverLay(true);
-                      setPlaying(true);
+                      
                     }
                   }}
                   onDuration={(seconds) => {
