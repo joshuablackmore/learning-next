@@ -108,9 +108,9 @@ const Nav2 = () => {
           {nav && (
             <motion.div
               className=" fixed left-0 right-0 z-[500] flex h-[100%] w-[100%] items-center justify-center  border-b bg-hi-light2 text-dark3"
-              initial={{ opacity: 0, translateY: "-100%" }}
-              animate={{ opacity: 1, translateY: 0 }}
-              exit={{ opacity: 1, translateY: "-100%" }}
+              initial={{ translateY: "-100%" }}
+              animate={{ translateY: 0 }}
+              exit={{ translateY: "-100%" }}
               transition={{ duration: 0.4 }}
             >
               <div

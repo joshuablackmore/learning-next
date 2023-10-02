@@ -58,7 +58,7 @@ const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
               initial={{ translateX: "100%" }}
               animate={{ translateX: 0 }}
               exit={{ translateX: "100%" }}
-              transition={{ duration: 1 }}
+              transition={{ duration: 0.8 }}
               className="left-100 absolute bottom-0 right-0 top-0 hidden w-[50%] flex-col justify-center gap-20 bg-dark1/70 text-2xl text-light1 2xl:flex"
             >
               <h1 className="mx-6 text-4xl">{heading}</h1>

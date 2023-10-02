@@ -1,10 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, progress } from "framer-motion";
 import Image from "next/image";
-
+import { HiPlay, HiStop } from "react-icons/hi";
+import { BiVolumeMute } from "react-icons/bi";
+import { GoUnmute } from "react-icons/go";
 import { instaMedia } from "./page";
+import ReactPlayer from "react-player";
+import styles from "./styles.module.css";
 
 const ClientInsta: React.FC<instaMedia> = ({
   media_url,
@@ -12,7 +16,18 @@ const ClientInsta: React.FC<instaMedia> = ({
   id,
   caption,
 }) => {
-  const [imagesLoaded, setImagesLoaded] = useState(false);
+  const [playing, setPlaying] = React.useState(false);
+  const [muted, setMuted] = useState(true);
+  const [hasWindow, setHasWindow] = React.useState(false);
+  const [vidProgress, setVidProgress] = React.useState(0);
+  const [duration, setDuration] = React.useState(0);
+  const [overlay, setOverLay] = React.useState(false);
+
+  React.useEffect(() => {
+    if (window !== undefined) {
+      setHasWindow(true);
+    }
+  }, []);
 
   return (
     <div>
@@ -30,27 +45,72 @@ const ClientInsta: React.FC<instaMedia> = ({
               src={media_url}
               width="450"
               height="300"
-              className="m-2 rounded-md opacity-0"
+              className="m-2 rounded-md pb-4 opacity-0"
               alt="insta feed"
               onLoadingComplete={(image) => {
                 image.classList.remove("opacity-0");
-                setImagesLoaded(true);
               }}
             />
             <p className="mx-4 ">{caption}</p>
           </>
         ) : (
           <>
-            <video
-              src={media_url}
-              controls
-              className="m-2 rounded-md"
-              autoPlay
-              muted
-              playsInline
-              poster="public/next.svg"
-              preload="auto"
-            ></video>
+            {hasWindow && (
+              <div id="wrap" className={overlay ? "" : styles.blur}>
+                <ReactPlayer
+                  playsinline
+                  width="100%"
+                  height="100%"
+                  url={media_url}
+                  muted={muted}
+                  playing={playing}
+                  onProgress={(progress) => {
+                    setVidProgress(progress.playedSeconds);
+                    if (progress.loadedSeconds > 10) {
+                      setOverLay(true);
+                      setPlaying(true);
+                    }
+                  }}
+                  onDuration={(seconds) => {
+                    setDuration(seconds);
+                  }}
+                />
+              </div>
+            )}
+
+            <progress
+              id="progressBar"
+              max={duration}
+              value={vidProgress}
+              className={styles.progress}
+            ></progress>
+
+            <div className="flex gap-4 pb-4">
+              <p
+                onClick={() => {
+                  setPlaying(!playing);
+                }}
+              >
+                {playing ? (
+                  <HiStop size={40} className=" text-hi-light1" />
+                ) : (
+                  <HiPlay size={40} className=" text-hi-light2" />
+                )}
+              </p>
+
+              <p
+                onClick={() => {
+                  setMuted(!muted);
+                }}
+              >
+                {muted ? (
+                  <BiVolumeMute size={35} className="text-hi-light1" />
+                ) : (
+                  <GoUnmute size={35} className="text-hi-light2" />
+                )}{" "}
+              </p>
+            </div>
+
             <p className="mx-4 ">{caption}</p>
           </>
         )}

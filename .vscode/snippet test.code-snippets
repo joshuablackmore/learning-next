@@ -1,0 +1,19 @@
+{
+	"Create Typed Functional Component": {
+    "prefix": "rsc",
+    "body": [
+      "import * as React from 'react';",
+      
+      "",
+      "interface ${1:${TM_FILENAME_BASE}}Props {}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: React.SFC<${1:${TM_FILENAME_BASE}}Props> = props => {",
+      "  return <div className=\"${1:${TM_FILENAME_BASE}}\">${1:${TM_FILENAME_BASE}}</div>;",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};",
+      ""
+    ],
+    "description": ""
+}
+}

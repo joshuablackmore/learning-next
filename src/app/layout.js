@@ -1,10 +1,8 @@
 import Footer from "./components/Footer/Footer";
 import Nav2 from "./components/NavBar/Nav2";
 
-
-
 import "./globals.css";
-import { Jost } from 'next/font/google';
+import { Jost } from "next/font/google";
 
 const inter = Jost({
   subsets: ["latin"],
@@ -19,9 +17,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="container">
+        <div className="container flex flex-col">
           <Nav2 />
-          {children}
+          <div className="flex-1">{children}</div>
           <Footer />
         </div>
       </body>

@@ -21,7 +21,7 @@ export async function POST(req) {
   client.messages
     .create(DOMAIN, messageData)
     .then((res) => {
-      console.log(res);
+      console.log('result:', res);
     })
     .catch((err) => {
       console.error(err);
