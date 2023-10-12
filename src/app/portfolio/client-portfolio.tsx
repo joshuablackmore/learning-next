@@ -42,7 +42,7 @@ export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
           key={_id}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2.5 }}
+          transition={{ duration: 3 }}
         >
           <Image
             loading="lazy"
