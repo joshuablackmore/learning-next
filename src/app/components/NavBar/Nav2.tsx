@@ -6,9 +6,12 @@ import { AiOutlineMenu, AiOutlineClose, AiFillInstagram } from "react-icons/ai";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./styles.module.css";
 import { usePathname } from "next/navigation";
+import { navigationLinks } from "./links";
+import { useActiveSectionContext } from "../../../../context/active-section-context";
 
 const Nav2 = () => {
   const pathname = usePathname();
+  const { activeSection, setActiveSection } = useActiveSectionContext();
 
   const [nav, setNav] = useState(false);
   const handleNav = (): void => {
@@ -27,18 +30,6 @@ const Nav2 = () => {
     };
   }, [nav]);
 
-  const navigationLinks = [
-    { path: "/", label: "Home" },
-    { path: "/portfolio", label: "Portfolio" },
-    { path: "/insta", label: "Instagram" },
-    { path: "/blog", label: "Blog" },
-    { path: "/contact2", label: "Contact" },
-    {
-      path: "https://www.instagram.com/petedblackmore",
-      label: <AiFillInstagram size={30} />,
-    },
-  ];
-
   return (
     <>
       <div className="box-border">
@@ -54,12 +45,15 @@ const Nav2 = () => {
                   </h1>
                 </Link>
               </div>
-              <div className="flex flex-row space-x-6">
+              <div className="flex flex-row space-x-12">
                 {navigationLinks.map((link, index) => {
-                  const isActive = pathname === link.path;
                   return (
                     <motion.div
-                      className="text-xl text-dark3 hover:text-hi-light1"
+                      className={
+                        activeSection === link.label
+                          ? `text-xl text-hi-light1`
+                          : `text-xl text-dark3 hover:text-hi-light2  `
+                      }
                       key={index}
                       initial={{ opacity: 0, y: -30 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -67,9 +61,21 @@ const Nav2 = () => {
                     >
                       <Link
                         href={link.path}
-                        className={isActive ? "text-hi-light1" : ""}
+                        onClick={() => setActiveSection(link.label)}
+                        className="relative"
                       >
                         {link.label}
+                        {link.label === activeSection && (
+                          <motion.span
+                            layoutId="activeSection"
+                            transition={{
+                              type: "spring",
+                              stiffness: 380,
+                              damping: 25,
+                            }}
+                            className="absolute bottom-0 left-0 right-0 top-7 -z-10 h-[4px] rounded-full bg-hi-light1"
+                          ></motion.span>
+                        )}
                       </Link>
                     </motion.div>
                   );
@@ -118,7 +124,6 @@ const Nav2 = () => {
                 className="flex flex-col items-center space-y-8 text-xl font-bold uppercase md:text-xl lg:text-2xl"
               >
                 {navigationLinks.map((link, index) => {
-                  const isActive = pathname === link.path;
                   return (
                     <motion.div
                       key={index}
@@ -129,7 +134,9 @@ const Nav2 = () => {
                     >
                       <Link
                         href={link.path}
-                        className={isActive ? " text-hi-light1" : ""}
+                        className={
+                          activeSection === link.label ? " text-hi-light1" : ""
+                        }
                       >
                         {link.label}
                       </Link>

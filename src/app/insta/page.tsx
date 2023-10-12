@@ -30,17 +30,24 @@ const Gallery = async (): Promise<JSX.Element> => {
   console.log(lessPics);
 
   return (
-    <div className="bg-light1 pt-[45px] sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 xl:pt-[60px]">
-      {lessPics.map((media) => (
-        <div key={media.id} className="flex flex-col gap-2 pb-10  ">
-          <ClientInsta
-            media_url={media.media_url}
-            media_type={media.media_type}
-            id={media.id}
-            caption={media.caption}
-          />
-        </div>
-      ))}
+    <div id="insta" className="pt-[60px] xl:pt-[75px]">
+      <div>
+        <h1 className="flex items-center justify-center text-xl font-bold">
+          Insta feed
+        </h1>
+      </div>
+      <div className=" bg-light1  sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 ">
+        {lessPics.map((media) => (
+          <div key={media.id} className="flex flex-col gap-2 ">
+            <ClientInsta
+              media_url={media.media_url}
+              media_type={media.media_type}
+              id={media.id}
+              caption={media.caption}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 

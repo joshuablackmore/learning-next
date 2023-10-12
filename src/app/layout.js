@@ -1,3 +1,4 @@
+import ActiveSectionContextProvider from "../../context/active-section-context";
 import Footer from "./components/Footer/Footer";
 import Nav2 from "./components/NavBar/Nav2";
 
@@ -18,8 +19,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className="container flex flex-col">
-          <Nav2 />
-          <div className="flex-1">{children}</div>
+          <ActiveSectionContextProvider>
+            <Nav2 />
+            <div className="flex-1">{children}</div>
+          </ActiveSectionContextProvider>
           <Footer />
         </div>
       </body>

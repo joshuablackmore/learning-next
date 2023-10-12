@@ -9,6 +9,8 @@ import { GoUnmute } from "react-icons/go";
 import { instaMedia } from "./page";
 import ReactPlayer from "react-player";
 import styles from "./styles.module.css";
+import { useInView } from "react-intersection-observer";
+import { useActiveSectionContext } from "../../../context/active-section-context";
 
 const ClientInsta: React.FC<instaMedia> = ({
   media_url,
@@ -29,14 +31,24 @@ const ClientInsta: React.FC<instaMedia> = ({
     }
   }, []);
 
+  /* active section */
+  const { ref, inView } = useInView();
+  const { setActiveSection } = useActiveSectionContext();
+  useEffect(() => {
+    if (inView) {
+      setActiveSection("Instagram");
+    }
+  }, [inView]);
+
   return (
     <div>
       <motion.div
+        ref={ref}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8 }}
         key={id}
-        className="m-2 flex flex-col items-center justify-center border-b sm:border-b-light1"
+        className="m-2 flex flex-col items-center justify-center sm:border-b-light1"
       >
         {media_type === "IMAGE" ? (
           <>
@@ -68,7 +80,6 @@ const ClientInsta: React.FC<instaMedia> = ({
                     setVidProgress(progress.playedSeconds);
                     if (progress.loadedSeconds > 10) {
                       setOverLay(true);
-                      
                     }
                   }}
                   onDuration={(seconds) => {
