@@ -11,6 +11,7 @@ import ReactPlayer from "react-player";
 import styles from "./styles.module.css";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "../../../context/active-section-context";
+import { once } from "form-data";
 
 const ClientInsta: React.FC<instaMedia> = ({
   media_url,
@@ -23,7 +24,7 @@ const ClientInsta: React.FC<instaMedia> = ({
   const [hasWindow, setHasWindow] = React.useState(false);
   const [vidProgress, setVidProgress] = React.useState(0);
   const [duration, setDuration] = React.useState(0);
-  const [overlay, setOverLay] = React.useState(false);
+  const [overlay, setOverLay] = React.useState(true);
 
   React.useEffect(() => {
     if (window !== undefined) {
@@ -41,7 +42,7 @@ const ClientInsta: React.FC<instaMedia> = ({
   }, [inView]);
 
   const frameRef = useRef(null);
-  const isInView = framerView(frameRef);
+  const isInView = framerView(frameRef, { once: true });
 
   return (
     <div ref={frameRef}>
@@ -52,27 +53,33 @@ const ClientInsta: React.FC<instaMedia> = ({
           animate={{ opacity: 1 }}
           transition={{ duration: 2 }}
           key={id}
-          className="m-2 flex flex-col items-center justify-center sm:border-b-light1"
+          className="m-2 flex flex-col items-center justify-center sm:border-b-dark3"
         >
           {media_type === "IMAGE" ? (
             <>
               <Image
                 loading="lazy"
                 src={media_url}
-                width="450"
-                height="300"
-                className="m-2 rounded-md pb-4 opacity-0"
+                width="500"
+                height="350"
+                objectFit="true"
+                className="m-2 rounded-md opacity-0 transition-all duration-700"
                 alt="insta feed"
                 onLoadingComplete={(image) => {
                   image.classList.remove("opacity-0");
+                  setTimeout(() => {
+                    image.classList.add("shadow-xl");
+                  }, 1000);
                 }}
               />
-              <p className="mx-4 ">{caption}</p>
+              <div className="">
+                <p className="mx-4 flex flex-1 ">{caption}</p>
+              </div>
             </>
           ) : (
             <>
               {hasWindow && (
-                <div id="wrap" className={overlay ? "" : styles.blur}>
+                <div id="wrap" className={overlay ? styles.blur : ""}>
                   <ReactPlayer
                     playsinline
                     width="100%"
@@ -83,7 +90,7 @@ const ClientInsta: React.FC<instaMedia> = ({
                     onProgress={(progress) => {
                       setVidProgress(progress.playedSeconds);
                       if (progress.loadedSeconds > 10) {
-                        setOverLay(true);
+                        setOverLay(false);
                       }
                     }}
                     onDuration={(seconds) => {

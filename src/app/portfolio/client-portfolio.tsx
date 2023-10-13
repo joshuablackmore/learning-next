@@ -48,7 +48,7 @@ export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
             loading="lazy"
             width="450"
             height="300"
-            className=" bg-hi-light1 blur rounded-xl transition-all duration-1000 ease-in-out"
+            className=" bg-hi-light1 blur rounded-lg transition-all duration-1000 ease-in-out"
             // placeholder="blur"
             // blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8zX1kFwAF2QJmdeHF+QAAAABJRU5ErkJggg=="
             src={image}
@@ -57,8 +57,8 @@ export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
             onLoadingComplete={(image) => {
               image.classList.remove("blur");
               setTimeout(() => {
-                image.classList.add("shadow-md")
-                image.classList.remove("rounded-xl");
+                image.classList.add("shadow-lg")
+                
               }, 1000)
             }}
           />

@@ -32,10 +32,10 @@ const Gallery = async (): Promise<JSX.Element> => {
 
   return (
     <div id="insta" className="pt-[60px] xl:pt-[75px]">
-      <div >
+      <div>
         <Title title="Instagram feed" />
       </div>
-      <div className=" bg-light1  sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 ">
+      <div className=" bg-light1  sm:grid sm:grid-cols-2 sm:grid-rows-1 lg:grid-cols-3 lg:grid-rows-3 ">
         {lessPics.map((media) => (
           <div key={media.id} className="flex flex-col gap-2 ">
             <ClientInsta
