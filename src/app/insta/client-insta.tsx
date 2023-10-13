@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { motion, progress } from "framer-motion";
+import { motion, progress, useInView as framerView } from "framer-motion";
 import Image from "next/image";
 import { HiPlay, HiStop } from "react-icons/hi";
 import { BiVolumeMute } from "react-icons/bi";
@@ -40,92 +40,97 @@ const ClientInsta: React.FC<instaMedia> = ({
     }
   }, [inView]);
 
+  const frameRef = useRef(null);
+  const isInView = framerView(frameRef);
+
   return (
-    <div>
-      <motion.div
-        ref={ref}
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        key={id}
-        className="m-2 flex flex-col items-center justify-center sm:border-b-light1"
-      >
-        {media_type === "IMAGE" ? (
-          <>
-            <Image
-              loading="lazy"
-              src={media_url}
-              width="450"
-              height="300"
-              className="m-2 rounded-md pb-4 opacity-0"
-              alt="insta feed"
-              onLoadingComplete={(image) => {
-                image.classList.remove("opacity-0");
-              }}
-            />
-            <p className="mx-4 ">{caption}</p>
-          </>
-        ) : (
-          <>
-            {hasWindow && (
-              <div id="wrap" className={overlay ? "" : styles.blur}>
-                <ReactPlayer
-                  playsinline
-                  width="100%"
-                  height="100%"
-                  url={media_url}
-                  muted={muted}
-                  playing={playing}
-                  onProgress={(progress) => {
-                    setVidProgress(progress.playedSeconds);
-                    if (progress.loadedSeconds > 10) {
-                      setOverLay(true);
-                    }
+    <div ref={frameRef}>
+      {isInView && (
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 2 }}
+          key={id}
+          className="m-2 flex flex-col items-center justify-center sm:border-b-light1"
+        >
+          {media_type === "IMAGE" ? (
+            <>
+              <Image
+                loading="lazy"
+                src={media_url}
+                width="450"
+                height="300"
+                className="m-2 rounded-md pb-4 opacity-0"
+                alt="insta feed"
+                onLoadingComplete={(image) => {
+                  image.classList.remove("opacity-0");
+                }}
+              />
+              <p className="mx-4 ">{caption}</p>
+            </>
+          ) : (
+            <>
+              {hasWindow && (
+                <div id="wrap" className={overlay ? "" : styles.blur}>
+                  <ReactPlayer
+                    playsinline
+                    width="100%"
+                    height="100%"
+                    url={media_url}
+                    muted={muted}
+                    playing={playing}
+                    onProgress={(progress) => {
+                      setVidProgress(progress.playedSeconds);
+                      if (progress.loadedSeconds > 10) {
+                        setOverLay(true);
+                      }
+                    }}
+                    onDuration={(seconds) => {
+                      setDuration(seconds);
+                    }}
+                  />
+                </div>
+              )}
+
+              <progress
+                id="progressBar"
+                max={duration}
+                value={vidProgress}
+                className={styles.progress}
+              ></progress>
+
+              <div className="flex gap-4 pb-4">
+                <p
+                  onClick={() => {
+                    setPlaying(!playing);
                   }}
-                  onDuration={(seconds) => {
-                    setDuration(seconds);
+                >
+                  {playing ? (
+                    <HiStop size={40} className=" text-hi-light1" />
+                  ) : (
+                    <HiPlay size={40} className=" text-hi-light2" />
+                  )}
+                </p>
+
+                <p
+                  onClick={() => {
+                    setMuted(!muted);
                   }}
-                />
+                >
+                  {muted ? (
+                    <BiVolumeMute size={35} className="text-hi-light1" />
+                  ) : (
+                    <GoUnmute size={35} className="text-hi-light2" />
+                  )}{" "}
+                </p>
               </div>
-            )}
 
-            <progress
-              id="progressBar"
-              max={duration}
-              value={vidProgress}
-              className={styles.progress}
-            ></progress>
-
-            <div className="flex gap-4 pb-4">
-              <p
-                onClick={() => {
-                  setPlaying(!playing);
-                }}
-              >
-                {playing ? (
-                  <HiStop size={40} className=" text-hi-light1" />
-                ) : (
-                  <HiPlay size={40} className=" text-hi-light2" />
-                )}
-              </p>
-
-              <p
-                onClick={() => {
-                  setMuted(!muted);
-                }}
-              >
-                {muted ? (
-                  <BiVolumeMute size={35} className="text-hi-light1" />
-                ) : (
-                  <GoUnmute size={35} className="text-hi-light2" />
-                )}{" "}
-              </p>
-            </div>
-
-            <p className="mx-4 ">{caption}</p>
-          </>
-        )}
-      </motion.div>
+              <p className="mx-4 ">{caption}</p>
+            </>
+          )}
+        </motion.div>
+      )}
     </div>
   );
 };

@@ -1,3 +1,4 @@
+import { Title } from "../components/title";
 import ClientInsta from "./client-insta";
 
 export type instaMedia = {
@@ -31,10 +32,8 @@ const Gallery = async (): Promise<JSX.Element> => {
 
   return (
     <div id="insta" className="pt-[60px] xl:pt-[75px]">
-      <div>
-        <h1 className="flex items-center justify-center text-xl font-bold">
-          Insta feed
-        </h1>
+      <div >
+        <Title title="Instagram feed" />
       </div>
       <div className=" bg-light1  sm:grid sm:grid-cols-2 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-3 ">
         {lessPics.map((media) => (

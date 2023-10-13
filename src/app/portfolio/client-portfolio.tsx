@@ -48,10 +48,19 @@ export default function ClientPortfolio({ image, _id, alt, name }: Artwork) {
             loading="lazy"
             width="450"
             height="300"
-            className="rounded-lg"
+            className=" bg-hi-light1 blur rounded-xl transition-all duration-1000 ease-in-out"
+            // placeholder="blur"
+            // blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8zX1kFwAF2QJmdeHF+QAAAABJRU5ErkJggg=="
             src={image}
             alt={alt}
             onClick={() => setFullscreenImage(image)}
+            onLoadingComplete={(image) => {
+              image.classList.remove("blur");
+              setTimeout(() => {
+                image.classList.add("shadow-md")
+                image.classList.remove("rounded-xl");
+              }, 1000)
+            }}
           />
 
           {/* Render the fullscreen image component if an image is clicked */}

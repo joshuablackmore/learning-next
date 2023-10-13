@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "../../../context/active-section-context";
 import { useInView as framerView, motion } from "framer-motion";
+import { Title } from "../components/title";
 
 type FormValues = {
   name: string;
@@ -68,6 +69,7 @@ const ContactForm2 = () => {
 
   return (
     <div ref={frameRef}>
+      
       {isInView && (
         <motion.div
           ref={ref}
@@ -88,6 +90,7 @@ const ContactForm2 = () => {
                 setImageLoaded(true);
               }}
             />
+            
           </div>
 
           <div className="flex h-[60%] items-center justify-center lg:h-full lg:w-[50%] ">
@@ -95,10 +98,8 @@ const ContactForm2 = () => {
               <span>Thanks for your message!</span>
             ) : (
               <div className=" flex h-[75%] w-[75%] flex-col items-center ">
-                <div>
-                  <h1 className="text-xl">Get in touch!</h1>
-                </div>
-                <form
+                  <Title title="Get in touch" />
+                  <form
                   onSubmit={handleSubmit(onSubmit)}
                   className="flex h-full w-[100%] flex-col justify-center space-y-8"
                 >
