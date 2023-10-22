@@ -10,7 +10,6 @@ export default function Home() {
       <HeroServer />
       <Portfolio />
       <Gallery />
-      <ContactForm />
     </main>
   );
 }
