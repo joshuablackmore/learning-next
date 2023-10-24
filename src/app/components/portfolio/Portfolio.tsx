@@ -7,7 +7,7 @@ export default async function Portfolio() {
 
   return (
     <div id="portfolio" className="pt-[60px] xl:pt-[75px]">
-      <div className="">
+      <div>
         <Title title="Portfolio" />
       </div>
       <div className="flex min-h-screen flex-col gap-2 bg-light1 sm:grid sm:grid-cols-1 sm:grid-rows-1 md:grid-cols-3 md:grid-rows-2 ">

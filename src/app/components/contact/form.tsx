@@ -53,8 +53,6 @@ const ContactForm = () => {
     } catch (err: any) {
       console.error("Err", err);
     }
-
-    window.scrollTo(0, 0);
   };
 
   return (
