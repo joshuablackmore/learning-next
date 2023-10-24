@@ -1,6 +1,6 @@
-import { getArtwork } from "../../../sanity/schemas/sanity-utils";
+import { getArtwork } from "../../../../sanity/schemas/sanity-utils";
 import ClientPortfolio from "./client-portfolio";
-import { Title } from "../components/title";
+import { Title } from "../Reusables/title";
 
 export default async function Portfolio() {
   const data = await getArtwork();

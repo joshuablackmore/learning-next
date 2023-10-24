@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": false,
@@ -27,9 +23,12 @@
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "src/app/test/getData.ts", "src/app/api/contact/route.js", "src/app/contact/page.jsx", "src/app/insta/client-insta.tsx", "src/app/insta/page.tsx"  ],
-  "exclude": [
-    "node_modules"
-  ]
+    "**/*.tsx",
+    "src/app/test/getData.ts",
+    "src/app/api/contact/route.js",
+    "src/app/components/contact/page.jsx",
+    "src/app/components/insta/client-insta.tsx",
+    "src/app/components/insta/Insta.tsx"
+  ],
+  "exclude": ["node_modules"]
 }

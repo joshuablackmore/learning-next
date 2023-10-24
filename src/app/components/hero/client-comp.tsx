@@ -5,7 +5,7 @@ import { PortableText } from "@portabletext/react";
 import { PortableTextBlock } from "sanity";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
-import { useActiveSectionContext } from "../../../context/active-section-context";
+import { useActiveSectionContext } from "../../../../context/active-section-context";
 import { HiDownload } from "react-icons/hi";
 
 interface heroProps {

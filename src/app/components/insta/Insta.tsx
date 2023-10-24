@@ -1,4 +1,4 @@
-import { Title } from "../components/title";
+import { Title } from "../Reusables/title";
 import ClientInsta from "./client-insta";
 
 export type instaMedia = {

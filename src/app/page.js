@@ -1,7 +1,7 @@
-import ContactForm from "./contact/page";
-import HeroServer from "./hero/page";
-import Gallery from "./insta/page";
-import Portfolio from "./portfolio/page";
+import ContactForm from "./components/contact/Contact";
+import HeroServer from "./components/hero/Hero";
+import Gallery from "./components/insta/Insta";
+import Portfolio from "./components/portfolio/Portfolio";
 
 export default function Home() {
   return (
