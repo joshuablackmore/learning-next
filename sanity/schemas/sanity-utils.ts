@@ -4,12 +4,16 @@ import { ProfilePic } from "../../types/ProfilePic";
 import { Home } from "../../types/Home";
 import { Blog } from "../../types/Blog";
 
-export async function getArtwork(): Promise<Artwork[]> {
-  const client = createClient({
+function createSanityClient() {
+  return createClient({
     projectId: "7gqekvwy",
     dataset: "production",
     apiVersion: "2023-07-14",
   });
+}
+
+export async function getArtwork(): Promise<Artwork[]> {
+  const client = createSanityClient();
 
   return client.fetch(
     groq`*[_type == "artwork"]{
@@ -20,11 +24,7 @@ export async function getArtwork(): Promise<Artwork[]> {
 }
 
 export async function getProfilePic(): Promise<ProfilePic[]> {
-  const client = createClient({
-    projectId: "7gqekvwy",
-    dataset: "production",
-    apiVersion: "2023-07-14",
-  });
+  const client = createSanityClient();
 
   return client.fetch(
     groq`*[_type == "portfolio"]{
@@ -37,11 +37,7 @@ export async function getProfilePic(): Promise<ProfilePic[]> {
 }
 
 export async function getHome(): Promise<Home[]> {
-  const client = createClient({
-    projectId: "7gqekvwy",
-    dataset: "production",
-    apiVersion: "2023-07-14",
-  });
+  const client = createSanityClient();
 
   return client.fetch(
     groq`*[_type == "home"]{
@@ -54,11 +50,7 @@ export async function getHome(): Promise<Home[]> {
 }
 
 export async function getBlog(): Promise<Blog[]> {
-  const client = createClient({
-    projectId: "7gqekvwy",
-    dataset: "production",
-    apiVersion: "2023-07-14",
-  });
+  const client = createSanityClient();
 
   return client.fetch(
     groq`*[_type == "blog"]{
@@ -75,12 +67,7 @@ export async function getBlog(): Promise<Blog[]> {
 }
 
 export async function getDynamicBlog(slug: string): Promise<Blog> {
-  const client = createClient({
-    projectId: "7gqekvwy",
-    dataset: "production",
-    apiVersion: "2023-07-14",
-  });
-
+  const client = createSanityClient();
   return client.fetch(
     groq`*[_type == "blog" && slug.current == $slug][0]{
             _id,

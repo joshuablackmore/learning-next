@@ -13,8 +13,8 @@ export const Title = ({ title }) => {
         <div className="flex justify-center">
           <motion.h1
             className="text-xl font-semibold"
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
             {title}

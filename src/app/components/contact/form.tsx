@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { useActiveSectionContext } from "../../../../context/active-section-context";
-import { useInView as framerView, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Title } from "../Reusables/title";
 
 type FormValues = {
@@ -27,7 +27,6 @@ const ContactForm = () => {
   }, [inView]);
 
   const [formSuccess, setFormSuccess] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   const {
     register,
@@ -73,7 +72,6 @@ const ContactForm = () => {
             className="object-left opacity-0 duration-700"
             onLoadingComplete={(image) => {
               image.classList.remove("opacity-0");
-              setImageLoaded(true);
             }}
           />
         </div>

@@ -41,8 +41,7 @@ const ClientInsta: React.FC<instaMedia> = ({
     }
   }, [inView]);
 
-  // const frameRef = useRef(null);
-  // const isInView = framerView(frameRef, { once: true });
+  
 
   return (
     <div>
