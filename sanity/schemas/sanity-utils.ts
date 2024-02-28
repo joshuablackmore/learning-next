@@ -36,7 +36,7 @@ export async function getProfilePic(): Promise<ProfilePic[]> {
   );
 }
 
-export async function getHome(): Promise<Home[]> {
+export async function getHome(): Promise<Home> {
   const client = createSanityClient();
 
   return client.fetch(
@@ -45,7 +45,7 @@ export async function getHome(): Promise<Home[]> {
             _createdAt,
             heading,
             intro,
-        }`,
+        }[0]`,
   );
 }
 
