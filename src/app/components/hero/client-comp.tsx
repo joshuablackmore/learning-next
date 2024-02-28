@@ -29,8 +29,8 @@ const HeroClient: React.FC<heroProps> = ({ heading, intro }) => {
   }, [inView]);
 
   return (
-    <div ref={ref} className="h-screen">
-      <div className=" relative h-[50%] min-h-[275px] border-b md:h-[60%] lg:h-[70%] xl:h-[100%] 2xl:h-[calc(100%-60px)] ">
+    <div ref={ref} className="mt-[60px]">
+      <div className=" relative h-[50%] min-h-[275px] border-b md:h-[60vh] lg:h-[70vh] xl:h-[calc(100vh-60px)] ">
         <Image
           alt="hero image"
           src={profPic}
