@@ -6,10 +6,10 @@ import Portfolio from "./components/portfolio/Portfolio";
 export default function Home() {
   return (
     <main>
+      //Hey Angus, thanks for having a look at this!!!!
       <HeroServer />
       <Portfolio />
       <Gallery />
-      <ContactForm />
     </main>
   );
 }
