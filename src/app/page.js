@@ -8,7 +8,7 @@ export default function Home() {
     <main>
       <HeroServer />
       <Portfolio />
-      <Gallery />
+      {/* <Gallery /> */}
       <ContactForm />
     </main>
   );
